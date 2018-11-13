@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            height: 1500px;
+        }
+
+        #box {
+            width: 100px;
+            height: 50px;
+            background: rebeccapurple;
+            text-align: center;
+            line-height: 50px;
+            font-size: 15px;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            display: none;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">滚回到顶部</div>
+    <script>
+        // let b =box.offsetTop;
+        // console.log(b);
+        // console.log(window.pageYOffset);
+        window.onscroll = function () {
+            if (window.pageYOffset >= 500) {
+                box.style.display = "block";
+            } else {
+                box.style.display = "none";
+            }
+        }
+
+        //以下是自己思考敲的代码
+        box.onclick = function () {
+            let y = window.pageYOffset;
+            console.log(y);
+            let timer = setInterval(fn1, 16.7)
+
+            function fn1() {
+                y = y - 100;
+                window.scrollTo(0, y);
+            }
+            if (y <= 0) {
+                y = 0;
+                window.scrollTo(0, y);
+                clearInterval(timer)
+            }
+        }
+
+        //以下是敲teacher的代码：
+        // box.onclick = function () {
+        //     let time = window.pageYOffset;
+        //     (function annimate() {
+        //         box.timer = requestAnimationFrame(annimate);
+        //         console.log(2)
+        //         time -= 100;
+        //         if (time <= 0) {
+        //             time = 0;
+        //             cancelAnimationFrame(box.timer);
+        //         }
+        //         window.onscroll(0, time);
+        //     })();
+        // }
+    </script>
+</body>
+
+</html>
