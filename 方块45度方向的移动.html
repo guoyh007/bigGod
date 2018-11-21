@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>郭永恒</title>
+<style>
+    #box {
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: absolute;
+        left: 0;
+        top: 0;
+
+    }
+</style>
+</head>
+
+<body>
+<!-- <input type="text"> -->
+<div id="box"></div>
+<script>
+    //创建一个对象，用来存储当前 是按下（true），还是松开（false0。
+    let obj = {
+        a: false,
+        b: false,
+        c: false,
+        d: false
+    } 
+    let num = 0;
+    let timer = null;
+
+    window.onkeydown = function (ev) {//按下
+        // console.log(obj);
+        // console.log('进入');
+        clearInterval(timer);//每按下清楚一下定时器（为长时间按下一个键做准备）
+        timer = setInterval(function () {//开一个定时器，进行，按键true和false的判断，并执行相应的函数
+            switch (ev.keyCode) {
+                case 37:
+                    obj.a = true;
+                    break;
+                case 38:
+                    obj.b = true;
+                    break;
+                case 39:
+                    obj.c = true;
+                    break;
+                case 40:
+                    obj.d = true;
+                    break;
+            }
+            fnf();
+        }, 10)
+    }
+
+    window.onkeyup = function (ev) {//按键抬起的时候触发的事件
+        clearTimeout(timer); //每当按键抬起清楚定时器
+        // console.log(obj);
+        // console.log('进入2函数');
+        // timer = setInterval(function(){
+        switch (ev.keyCode) {//每松开一个键，对储存的数据进行相应的改变。
+            case 37:
+                obj.a = false;
+                break;
+            case 38:
+                obj.b = false;
+                break;
+            case 39:
+                obj.c = false;
+                break;
+            case 40:
+                obj.d = false;
+                break;
+        }
+        // },10)
+    }
+
+    function fnf() { //声明一个运动函数
+        function fn1() { //把旋转功能放到一个函数里边，为以后调用做准备
+            box.style.transform = 'rotate(' + num + 'deg)'
+        }
+
+        if (obj.a == true && obj.b == true && obj.c == false && obj.d == false) {//如果同时按下了，左键和上键，进行相应的移动
+            box.style.left = box.offsetLeft - 5 + 'px';
+            box.style.top = box.offsetTop - 5 + 'px';
+            num++;
+            fn1();
+        }
+        if (obj.a == false && obj.b == true && obj.c == true && obj.d == false) {//如果同时按下了，上键和右键，进行相应的移动
+            box.style.top = box.offsetTop - 5 + 'px';
+            box.style.left = box.offsetLeft + 5 + 'px';
+            num++;
+            fn1();
+        }
+        if (obj.a == false && obj.b == false && obj.c == true && obj.d == true) {//如果同时按下了，右键和下键，进行相应的移动
+            box.style.left = box.offsetLeft + 5 + 'px';
+            box.style.top = box.offsetTop + 5 + 'px';
+            num++;
+            fn1();
+        }
+        if (obj.a == true && obj.b == false && obj.c == false && obj.d == true) {//如果同时按下了，下键和左键，进行相应的移动
+            box.style.top = box.offsetTop + 5 + 'px';
+            box.style.left = box.offsetLeft - 5 + 'px';
+            num++;
+            fn1();
+        };
+        if (obj.a == true && obj.b == false && obj.c == false && obj.d == false) { //只按左键，并进行相应的移动
+            num++;
+            box.style.left = box.offsetLeft - 5 + 'px';
+            fn1()
+        };
+        if (obj.a == false && obj.b == true && obj.c == false && obj.d == false) { //只按上键，进行相应的移动
+            num++;
+            box.style.top = box.offsetTop - 5 + 'px';
+            fn1()
+        };
+        if (obj.a == false && obj.b == false && obj.c == true && obj.d == false) { //只按右键，进行相应的移动
+            num++;
+            box.style.left = box.offsetLeft + 5 + 'px';
+            fn1()
+        };
+        if (obj.a == false && obj.b == false && obj.c == false && obj.d == true) { //只按下键，进行相应的移动
+            num++;
+            box.style.top = box.offsetTop + 5 + 'px';
+            fn1()
+        };
+
+    }
+</script>
+</body>
+
+</html>
