@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>郭永恒</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+
+        }
+    </style>
+</head>
+
+<body>
+<!-- <input type="text"> -->
+<div id="box"></div>
+<script>
+//创建一个对象，用来存储当前 是按下（true），还是松开（false0。
+let obj = {
+    37: false,
+    38: false,
+    39: false,
+    40: false
+}
+// let arr =_.values(obj);
+// console.log(arr)
+let num = 0;
+let timer = null;
+window.onkeydown = function (ev) {
+    clearInterval(timer);
+    obj[ev.keyCode] = true;
+    timer = setInterval(fn1,16.7);
+    // console.log(1);
+    // console.log(obj);
+}
+window.onkeyup = function (ev) {
+    clearInterval(timer);
+    obj[ev.keyCode] = false;
+    // console.log(2);
+
+}
+
+function fn1() {
+    // console.log(obj);
+    // console.log(3)
+    if (obj[37]) {
+        box.style.left = box.offsetLeft - 5 + 'px';
+    }
+    if (obj[38]) {
+        box.style.top = box.offsetTop - 5 + 'px';
+    }
+    if (obj[39]) {
+        box.style.left = box.offsetLeft + 5 + 'px';
+    }
+    if (obj[40]) {
+        box.style.top = box.offsetTop + 5 + 'px';
+    }
+}
+</script>
+</body>
+
+</html>
