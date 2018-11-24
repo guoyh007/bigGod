@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title></title>
@@ -11,8 +12,8 @@
         <header id="head">
             <div id="top">
                 <h1 class="title">
-						<a href="" title="妙味云盘"></a>
-					</h1>
+                    <a href="" title="妙味云盘"></a>
+                </h1>
                 <div class="right">
                     <div class="user">
                         <span><img src="img/user-ico.jpg" alt="" /></span>
@@ -48,20 +49,30 @@
         </header>
         <section id="section">
             <div class="tree-menu" class="fix" onselectstart="return false;">
-                <!-- <ul>
+                <ul>
                     <li>
-                        <div class="tree-title tree-ico close">
+                        <div class="tree-title tree-ico open">
                             <span><i></i>微云</span>
                         </div>
                         <ul>
                             <li>
-                                <div class="tree-title tree-ico close">
+                                <div class="tree-title tree-ico open">
+                                    <span><i></i>我的文档</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="tree-title tree-ico open">
                                     <span><i></i>我的音乐</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="tree-title tree-ico open">
+                                    <span><i></i>123</span>
                                 </div>
                             </li>
                         </ul>
                     </li>
-                </ul> -->
+                </ul>
             </div>
             <div class="folder-content">
                 <div class="breadmenu">
@@ -97,11 +108,11 @@
             <h2>选择存储位置</h2>
             <p class="folderName">我的文档</p>
             <div class="content">
-				
+
             </div>
             <div class="footer">
                 <input type="button" name="" class="cancel" value="取消">
-                <input type="button" name="" class ="ok" value="确定">
+                <input type="button" name="" class="ok" value="确定">
                 <p class="tip"></p>
             </div>
             <i class="icon_close"></i>
@@ -121,10 +132,10 @@
         </div>
         <div class="full-tip-box">
             <span class="full-tip">
-					<span class="inner">
-						<!-- <i class="ico"></i> -->
-						<span class="tip-text">新建文件夹成功</span>
-            </span>
+                <span class="inner">
+                    <!-- <i class="ico"></i> -->
+                    <span class="tip-text">新建文件夹成功</span>
+                </span>
             </span>
         </div>
     </div>
@@ -140,58 +151,58 @@
     <script src="js/content/move.js"></script>
     <script src="js/content/replaceName.js"></script>
     <script src="js/tishi/tishi.js"></script> -->
-    
+
     <script src="1.js"></script>
+    <script src="tree.js"></script>
     <!-- <script src="2（最初版）.js"></script> -->
 
-<script>
-    /*
+    <script>
+        /*
         如果你把云做好，你就走进了顺利就业的那30%的人群中。
     */
-    /*
-        [
+        /*
+            [
+                {
+                    name:'微云',
+                    children:[
+                        {
+                            name:'我的音乐',
+                            
+                        },
+                        {
+                            name:'我的文档'，
+                            children:[
+                                {},{},{}
+                            ]
+                        }
+                    ]
+                }
+            ]
+
             {
-                name:'微云',
-                children:[
-                    {
-                        name:'我的音乐',
-                        
-                    },
-                    {
-                        name:'我的文档'，
-                        children:[
-                            {},{},{}
-                        ]
-                    }
-                ]
+                "0":{
+                    id:0,
+                    name:'微云',
+                    pid:-1
+                },
+                "1":{
+                    id:1,
+                    name:'我的音乐',
+                    pid:0
+                },
+                "2":{
+                    id:2,
+                    name:'我的文档',
+                    id:0
+                },
+                "3":{
+                    id:3,
+                    name:'我的爱好',
+                    pid:0
+                }
             }
-        ]
-
-        {
-            "0":{
-                id:0,
-                name:'微云',
-                pid:-1
-            },
-            "1":{
-                id:1,
-                name:'我的音乐',
-                pid:0
-            },
-            "2":{
-                id:2,
-                name:'我的文档',
-                id:0
-            },
-            "3":{
-                id:3,
-                name:'我的爱好',
-                pid:0
-            }
-        }
-    */
-
-</script>
+        */
+    </script>
 </body>
 
 </html>
