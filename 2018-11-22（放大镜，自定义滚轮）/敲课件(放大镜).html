@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>郭</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #box{
+        width: 350px;
+        height: 350px;
+        position: relative;
+        top: 0;
+        left: 0;
+        border: 1px solid black;
+        float: left;
+        /* display: inline-block; */
+        margin-right: 100px;
+    }
+    #box img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    #mark{
+        width: 175px;
+        height: 175px;
+        background: black;
+        opacity: 0.5;
+        position: absolute;
+        left: 0;
+        top: 0;
+        cursor: pointer;
+        display: none;
+    }
+    #bigBox{
+        width:350px;
+        height:350px;
+        border:1px solid black;
+        overflow: hidden;
+        position: relative;
+        top: 0;
+        left: 0;
+        display: none;
+    }
+    #bigBox img{
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    
+    </style>
+</head>
+<body>
+    <div id="box">
+        <img src="iphone.jpg" alt="">
+        <div id="mark"></div>
+    </div>
+    <div id="bigBox">
+        <img src="iphone_big.jpg" alt="" id="img">
+    </div>
+<script>
+    let img = document.getElementById('img');
+    let box = document.getElementById('box');
+    let bobigBoxx = document.getElementById('bigBox');
+    let mark = document.getElementById('mark');
+
+    box.onmouseenter = function(){
+        mark.style.display ='block';
+        bigBox.style.display ='inline-block';
+    }
+    box.onmouseleave = function(){
+        mark.style.display ='none';
+        bigBox.style.display ='none';
+    }
+
+    let {right,bottom} = box.getBoundingClientRect();
+    box.onmousemove = function(ev){
+        let l = ev.pageX - mark.offsetWidth/2;
+        let t = ev.pageY - mark.offsetHeight/2;
+        let d =right - mark.offsetWidth;
+        let d1 = bottom - mark.offsetHeight;
+        if(l < 0){
+            l = 0;
+        }else if(l >d){
+            l = d - 1; 
+        }
+
+        if(t<0){
+            t = 0; 
+        }else if(t >bottom - mark.clientHeight){
+            t = d1 - 1;
+        }
+
+        let scaleX = l/(d - 1);
+        let scaleY = t/(d1 - 1);
+        // console.log(scaleX);
+        img.style.left = (bigBox.clientWidth - img.offsetWidth) * scaleX + 'px';
+        img.style.top = (bigBox.clientHeight - img.offsetHeight) * scaleY + 'px';  
+        // console.log(img.style.left,img.style.top);
+        mark.style.left = l + 'px';
+        mark.style.top = t + 'px';
+    }
+
+    
+</script>
+</body>
+</html>
