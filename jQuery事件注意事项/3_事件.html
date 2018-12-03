@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width: 100px;
+    height: 100px;
+    background: #000;
+}
+</style>
+</head>
+<body>
+    <button id="btn">点击</button>
+    <div id="box"></div>
+<script src="./jquery-3.2.1.min.js"></script>
+<script>
+    // $('#btn').click(function(){
+    //     $('#box').off().click(function(){
+    //         console.log(1);
+    //     });
+    // });
+
+    //如果不加off(),点完了很多次btn之后再点box会出现很多次 1 
+    $('#btn').click(function(){
+        $('#box').click(function(){
+            console.log(1);
+        });
+        
+    });
+
+
+
+</script>   
+</body>
+</html>
