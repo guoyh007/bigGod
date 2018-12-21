@@ -1,0 +1,500 @@
+    8  git commit -a -m "和谐1"
+    9  git log
+   10  git push origin master
+   11  git log
+   12  git push origin master
+   13  git log
+   14  git add .
+   15  git commit -a -m "xxx"
+   16  git log
+   17  git push origin master
+   18  git log
+   19  git reset --hard 8cdc7933d9
+   20  git log
+   21  git log
+   22  git reset --hard  8cdc7933d9
+   23  git status
+   24  g
+   25  git status
+   26  git add .
+   27  git log
+   28  git add .
+   29  gti commit -m "20180927下午5点"
+   30  git log
+   31  git commit -m "20180927下午5点"
+   32  git log
+   33  git push origin master
+   34  git log
+   35  git clone https://github.com/guoyh007/jstraining01.git
+   36  git clone https://github.com/nizp/20180911.git
+   37  git clone https://github.com/nizp/20180911.git
+   38  git pull
+   39  git pull
+   40  git pull
+   41  git pull
+   42  git clone https://github.com/nizp/20180911.git
+   43  git clone 
+   44  git clone 
+   45  git clone https://github.com/nizp/20180911.git
+   46  git status
+   47  git pull
+   48  git pull
+   49  git pull
+   50  git pull
+   51  git pull origin
+   52  git pull origin
+   53  git pull
+   54  git pull
+   55  git pull
+   56  git pull
+   57  git pull
+   58  git clone https://github.com/nizp/20180911.git
+   59  git clone https://github.com/nizp/20180911.git
+   60  git clone https://github.com/nizp/20180911.git
+   61  git clone 
+   62  git clone 
+   63  git clone https://github.com/nizp/20180911.git
+   64  git status
+   65  git clone https://github.com/nizp/20180911.git
+   66  git clone        类数组:
+   67              类似于数组，有length，能添加属性和方法，可以通过下标找到值
+   68              但是使用不了数组的方法。
+   69          Array.from()  ES6提供的新方法，类数组转成数组
+   70          Array.prototype.slice.call(aEle)
+   71      */    
+   72      
+   73      var aEle = document.getElementsByTagName('*');
+   74      // console.log(aEle);
+   75      // aEle = Array.from(aEle);
+   76      //  aEle.push(5);
+   77      // console.log(aEle);
+   78  git clone https://github.com/nizp/20180911.git
+   79  git pull
+   80  git pull
+   81  git pull
+   82  git status
+   83  ssh-keygen -t rsa -C "注册邮箱"
+   84  ssh-keygen -t rsa -C "754308574@qq.com"
+   85  y
+   86   ssh-keygen -t rsa -C "754308574@qq.com"
+   87  ssh -T git@github.com
+   88  ssh -T git@github.com
+   89  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDi9jKJFMjs+TlG50oj3N8PFiCFG/hBX298IxBS6uhlvImmjIi5N1xLiLcOzJs5+vASLpVwV8PXFpRjExkiRd7ozlhXZiCnJhLYSFIEgYee1twxouEd+7J1m+rznQ6I7YBl0A9rVqnNAK+7KXbPUrMvLtn+Cj9I7uBwQk1g82fGUhskU99r89msT3yK6M8xX+ARAoni9TlSpUhA76KZumrOWMdnFKdgxLzuxe6a2T/di1hYNaLRZBknkuGHT7bSpfj9xQzDvxnHCs8NjF8BDXlSQXYtV3JriVz34ZAds6FcWHLaHz3axvpMMFQl59Y1Ug51acV3X3e3ZlOunafrZBcl 754308574@qq.com
+   90  ssh -T git@github.com
+   91  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDi9jKJFMjs+TlG50oj3N8PFiCFG/hBX298IxBS6uhlvImmjIi5N1xLiLcOzJs5+vASLpVwV8PXFpRjExkiRd7ozlhXZiCnJhLYSFIEgYee1twxouEd+7J1m+rznQ6I7YBl0A9rVqnNAK+7KXbPUrMvLtn+Cj9I7uBwQk1g82fGUhskU99r89msT3yK6M8xX+ARAoni9TlSpUhA76KZumrOWMdnFKdgxLzuxe6a2T/di1hYNaLRZBknkuGHT7bSpfj9xQzDvxnHCs8NjF8BDXlSQXYtV3JriVz34ZAds6FcWHLaHz3axvpMMFQl59Y1Ug51acV3X3e3ZlOunafrZBcl 754308574@qq.com
+   92  ssh -T git@github.com
+   93  git config --global credential.helper store
+   94  git config --global credential.helper store
+   95  git config --global credential.helper store
+   96  git add .
+   97  git commit -m "1023"
+   98  git status
+   99  git pull
+  100  git add .
+  101  git commit -m "10230"
+  102  git add .
+  103  git status
+  104  git commit -m "20181023"
+  105  git statua
+  106  git status
+  107  git log
+  108  git push origin master
+  109  git commit -mm m
+  110  git commit -m "千万人"
+  111  git add .
+  112  git status
+  113  git commit -m "千万人"
+  114  git status
+  115  git push origin master
+  116  git config --global credential.helper store
+  117  git config --global credential.helper store
+  118  git pull
+  119  git clone https://github.com/nizp/20181023.git
+  120  git pull
+  121  git pull
+  122  git pull
+  123  git pull
+  124  git pull
+  125  git clone https://github.com/nizp/20181023.git
+  126  git pull
+  127  git status
+  128  git add .
+  129  git status
+  130  git commit -m "我说"
+  131  git status
+  132  git push origin master
+  133  git status
+  134  git status
+  135  git status
+  136  git commit -m "我说"
+  137  git status
+  138  git commit -m"我说"
+  139  git status
+  140  git status
+  141  git status
+  142  git status
+  143  git add .
+  144  git status
+  145  git commit -m "我说了"
+  146  git status
+  147  git diff
+  148  git push origin master
+  149  git status
+  150  git log
+  151  git pull
+  152  git log
+  153  git pull
+  154  git clone https://github.com/guoyh007/zhou.git
+  155  git add 。
+  156  git add .
+  157  git add .
+  158  git commit -m "10月29日"
+  159  git push origin master
+  160  git pull
+  161  git pull
+  162  git pull
+  163  git status
+  164  git log
+  165  git pull
+  166  git pull
+  167  git add .
+  168  git commit -m "10月30日"
+  169  git push origin master
+  170  git log
+  171  git push origin master
+  172  git log
+  173  git push origin master
+  174  git log
+  175  git push origin master
+  176  git pull
+  177  git pull
+  178  git pull
+  179  git pull
+  180  git add .
+  181  git commit -m "11月1日"
+  182  git push origin master
+  183  git pull
+  184  git pull
+  185  git add .
+  186  git add .
+  187  git status
+  188  git commit -m "11月2日"
+  189  git status
+  190  git log
+  191  git push origin master
+  192  git add 。
+  193  git add .
+  194  git commit -m "20181103"
+  195  git push origin master
+  196  git pull
+  197  git add 。
+  198  git add .
+  199  git commit -m m "1104"
+  200  git log
+  201  git add .
+  202  git commit -m "11月4日"
+  203  git push origin master
+  204  git pull
+  205  git add .
+  206  git commit -m "11月5日"
+  207  git push origin master
+  208  git add 。
+  209  git add .
+  210  git commit -m m '1106'
+  211  git commit -m m "11月06日"
+  212  个、、
+  213  git commit -m "11月06日"
+  214  git push origin master
+  215  git pull
+  216  git pull
+  217  git add .
+  218  git commit -m "2018年11月07日"
+  219  git push origin master
+  220  git pull
+  221  git pull
+  222  git pull
+  223  git pull
+  224  git pull
+  225  git pull
+  226  git pull
+  227  git pull
+  228  git pull
+  229  git pull
+  230  git pull
+  231  git pull
+  232  git pull
+  233  git pull
+  234  git pull
+  235  git pull
+  236  git pull
+  237  git pull
+  238  git pull
+  239  git pull
+  240  git pull
+  241  git pull
+  242  git clone https://github.com/nizp/20181023.git
+  243  git clone https://github.com/nizp/20181023.git
+  244  git add .
+  245  git commit -m "11月08日"
+  246  git push origin master
+  247  git pull
+  248  git add .
+  249  git commit -m "11月9日"
+  250  git push origin master
+  251  git pull
+  252  git pull
+  253  git add .
+  254  git commit -m "11月10日"
+  255  git push origin master
+  256  git pull
+  257  git pull
+  258  git add .
+  259  git commit -m "2018年11月11日"
+  260  git push origin master
+  261  git pull
+  262  git add .
+  263  git commit -m "11月13日"
+  264  git push origin master 
+  265  git pull 
+  266  git pull
+  267  git pull
+  268  git add 。
+  269  git add .
+  270  git commit -m "2018年11月13日"
+  271  git push origin master
+  272  git log
+  273  git add .
+  274  git commit -m "2018-11-13"
+  275  git push origin master
+  276  git pull
+  277  git pull
+  278  git pull
+  279  git pull
+  280  git pull
+  281  git add .
+  282  git commit -m "11月15日"
+  283  git push origin master
+  284  git pull
+  285  git pull
+  286  git pull
+  287  git push origin master
+  288  git add 。
+  289  git add .
+  290  git commmit -m "11月17日"
+  291  git commit -m m "11月17日"
+  292  git log
+  293  git add .
+  294  git commit -m "11月17日"
+  295  git push origin master 
+  296  git pull
+  297  gitpull
+  298  git add .
+  299  git commit -m "2018年11月18日"
+  300  git push origin master
+  301  /..
+  302  /
+  303  ../
+  304  cd
+  305  cd/
+  306  d
+  307  d/coding
+  308  cd d/Coding
+  309  cd
+  310  cd..
+  311  ll
+  312  cd coding
+  313  cd Coding
+  314  ls
+  315  cd d
+  316  git pull
+  317  git pull
+  318  git pull
+  319  git pull
+  320  git pull
+  321  git pull
+  322  git pull
+  323  git pull
+  324  git pull
+  325  git pull
+  326  git pull
+  327  git pull
+  328  git add .
+  329  git commit -m "2018年11月19日"
+  330  git push origin master
+  331  git pull
+  332  git pull
+  333  git add .
+  334  git commit -m "2018/11/20"
+  335  git push origin master 
+  336  git add .
+  337  git commit -m "2018/11/21"
+  338  git push origin master
+  339  git pull
+  340  git add .
+  341  git commit -m "2018/11/22"
+  342  git push origin master
+  343  git pull
+  344  git add .
+  345  git commit -m "11-22"
+  346  git push origin master 
+  347  git pull
+  348  git pull
+  349  git pull
+  350  git add .
+  351  git commit -m "2018/11/23"
+  352  git push origin master
+  353  git add .
+  354  git commit -m "2018/11/24"
+  355  git push origin master
+  356  git add .
+  357  git commit -m "2018/11/25"
+  358  git push origin master
+  359  git push origin master
+  360  git log
+  361  git push origin master
+  362  git clone e "https://github.com/guoyh007/2018-3-12.git"
+  363  git clone 'https://github.com/guoyh007/2018-3-12.git'
+  364  git pull
+  365  git pull
+  366  git add .
+  367  git commit -m "11/26"
+  368  git add .
+  369  git commit -m "11/26"
+  370  git push origin master 
+  371  git pull
+  372  git pull
+  373  git pull
+  374  git pull
+  375  git pull
+  376  git add .
+  377  git commit -m "2018/11/27"
+  378  git push origin master
+  379  git pull
+  380  git pull
+  381  git pull
+  382  git add .
+  383  git commit -m "2018-11-27"
+  384  git push origin master
+  385  git pull
+  386  git pull
+  387  git add .
+  388  git commit -m "2018/11/28"
+  389  git push origin master
+  390  git add .
+  391  git commit -m "2018/11/29"
+  392  git push origin master
+  393  git add .
+  394  git commit -m "2018/11/29下午"
+  395  git push origin master
+  396  git pull
+  397  git add .
+  398  git commit -m "2018/11/30"
+  399  git push origin master
+  400  git pull
+  401  git pull
+  402  git add .
+  403  git commit -m "2018/12/1"
+  404  git push origin master
+  405  git add .
+  406  git commit -m "2018/21/3"
+  407  git push origin master
+  408  git add .
+  409  git commit -m "12/03"
+  410  git push origin master 
+  411  git pull
+  412  git pull
+  413  git add .
+  414  git commit -m "12月3日"
+  415  git push origin master
+  416  git pull
+  417  git add .
+  418  git commit -m "12/04"
+  419  git commit -m "12/004"
+  420  git push origin mater
+  421  git push origin master
+  422  git add .
+  423  git commit -m "12/04"
+  424  git push origin master
+  425  git log
+  426  git add .
+  427  git commit -m "2018/12/04"
+  428  git add .
+  429  git commit -m "wolagequ "
+  430  git pull
+  431  git push origin master
+  432  git pull
+  433  git pull
+  434  git add .
+  435  git commit -m "2018/12/5"
+  436  git push origin master
+  437  git add .
+  438  git commit -m "12/06"
+  439  git push oriigin master
+  440  git push origin master
+  441  git pull
+  442  git add .
+  443  git commit -m "12/08"
+  444  git push origin master
+  445  git pull
+  446  git add .
+  447  git commit -m "12/09新建文件夹功能"
+  448  git push origin master
+  449  git add 。
+  450  git add .
+  451  git commit -m "qule"
+  452  git push origin master
+  453  git pull
+  454  git add .
+  455  git commit -m "12/09"
+  456  git push origin master
+  457  git pull
+  458  git add .
+  459  git commit -m "我了个去"
+  460  git push origin master
+  461  git log
+  462  git add .
+  463  git commit -m "2018/12/09"
+  464  git push origin master
+  465  git add .
+  466  git commit -m "12/10"
+  467  git push origin mastet
+  468  git push origin master
+  469  git pull
+  470  git pull
+  471  git add .
+  472  git commit -m "12/11"
+  473  git push origin master
+  474  git clone https://github.com/Yanlong-LI/Teamwork.git
+  475  git add .
+  476  git commit -m "12/12"
+  477  git push origin master
+  478  git pull
+  479  git add .
+  480  git commit -m m -m "12/14"
+  481  git push origin master
+  482  git pull
+  483  git add .
+  484  git commit -m "2018/12/15"
+  485  git push origin master
+  486  git pull
+  487  git pull
+  488  git add .
+  489  git commit -m "12/17"
+  490  git push origin master
+  491  git pull
+  492  git add .
+  493  git commit -m "2018-12-18"
+  494  git push origin master
+  495  git pull
+  496  git add .
+  497  git commit -m "12/19"
+  498  git push origin master
+  499  git log
+  500  git log
+  501  git -h
+  502  git -log -a
+  503  git --log -all
+  504  git log
+  505  git log --line
+  506  git log --oneline
+  507  history >> 1.txt
