@@ -1,0 +1,377 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+<style type="text/css">
+body,
+h1 {
+	margin: 0;
+}
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+input {
+	outline: none;
+}
+table {
+	border-collapse: collapse;
+	border: #bbb;
+}
+body {
+	width: 100%;
+	height: 100%;
+	/*background: url(img/2.jpg) no-repeat;*/
+}
+.tBody {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	margin-top: 30px;
+	padding: 20px 30px 40px;
+	background-color: rgba(255,255,255,.6);
+}
+.title {
+	text-align: center;
+	color: #fca113;
+	text-shadow: 0 0 2px #fcf913;
+	line-height: 50px;
+}
+table {
+	background-color: #fff;
+}
+th {
+	background-color: #ddd;
+}
+tr {
+	height: 30px;
+}
+ul {
+	padding: 5px 0;
+	width: 600px;
+	text-align: center;
+}
+td{
+	text-align: center;
+}
+td input {
+	margin: 0 2px;
+}
+li {
+	padding: 5px 0;
+	overflow: hidden;
+}
+label {
+	display: inline-block;
+}
+input[type="text"] {
+	border: 1px solid #ccc;
+	width: 80px;
+	height: 20px;
+}
+/*.active {
+	background-color: #f7cb75;
+}*/
+/*#tab tbody tr:hover {
+	background-color: #f7cb75;
+}*/
+</style>
+</head>
+<body>
+<section class="tBody">
+	<h1 class="title"></h1>
+	<ul id="header">
+		<li class="addPre">
+			<label>名字： <input type="text" name="" /></label>
+			<label>年龄： <input type="text" /></label>
+			<input type="button" value="添加" />
+		</li>
+		<li>
+			<span>排序</span>
+			<select>
+				<option value="price">年龄</option>
+				<option value="id">编号</option>
+			</select>
+			<select>
+				<option value='2'>从高到底</option>
+				<option value='1'>从低到高</option>
+			</select>
+			<input type="button" value="提交" />
+			<input type="button" value="批量删除" />
+		</li>
+	</ul>
+	<table id="tab" width="600" align="center" border="1">
+		<thead>
+			<th>全选<input type="checkbox" id="checkAll"></th>
+			<th index="id">编号</th>
+			<th>商品</th>
+			<th index="price">年龄</th>
+			<th>操作</th>
+		</thead>
+		<tbody id="tbody">
+			<!--<tr>
+				<td><input type="checkbox"></td>
+				<td>1</td>
+				<td>露露</td>
+				<td>12</td>
+				<td>
+					<input type="button" value="删除"/>
+					<input type="button" value="上移">
+					<input type="button" value="下移">
+				</td>
+			</tr>-->
+		</tbody>
+	</table>	
+</section>
+</body>
+<script>
+	let seleArr = [];//空数组接收被选择的数据
+	// 写一个 渲染数据 的方法：checked="checked"
+	function render(e){
+		let temp = '';
+			e.data.forEach(d=>{
+				temp += `<tr>
+					<td><input type="checkbox"></td>
+					<td>${d.id}</td>
+					<td>${d.name}</td>
+					<td>${d.age}</td>
+					<td>
+						<input type="button" value="删除"/>
+						<input type="button" value="上移">
+						<input type="button" value="下移">
+					</td>
+				</tr>`
+			});
+			tbody.innerHTML = temp;
+	}
+
+	fetch('/getdata')
+	.then(e=>e.json())
+	.then(e=>{
+		if(e.code == 0){
+			render(e);
+			fn1();
+		}
+	});
+
+	let header = document.getElementById('header');
+	let addPre = header.getElementsByClassName('addPre')[0];
+	let input1 = addPre.getElementsByTagName('input')[0];
+	let input2 = addPre.getElementsByTagName('input')[1];
+	let add = addPre.getElementsByTagName('input')[2];
+	// console.log(input1);
+	// console.log(input2);
+	// console.log(add);
+	//添加数据
+	add.onclick = function(){
+		let name = input1.value.trim();
+		let age = input2.value.trim();
+		if(name && age){	
+			// console.log('进去123')
+			//add?name=小哥&&age=34
+			fetch('/add?name='+name+'&&age='+age)
+			.then(e=>e.json())
+			.then(e=>{
+				// console.log(e);
+				if(e.code==0){
+					render(e);
+					fn1();
+				}else{
+					alert('用户名已经被占用');
+
+				}
+			})
+		}else{
+			alert('请输入名字和年龄');
+		}
+		//执行完，内容清空
+		input1.value ='';
+		input2.value ='';
+	}
+
+	//每一行的操作命令
+	function fn1(){
+		let tbody = document.getElementById('tbody');
+		// console.log(tbody);
+		let trs = Array.from(tbody.getElementsByTagName('tr'));
+		// console.log(trs);
+		//面向对象写，删除功能
+		class tr{
+			constructor(i){
+				this.tr = trs[i];
+				// console.log(this.tr);
+				this.td4 = this.tr.getElementsByTagName('td')[4];
+				// console.log(this.td4);
+				this.delete = this.td4.getElementsByTagName('input')[0];
+				// console.log(this.delete);
+				this.down = this.td4.getElementsByTagName('input')[1];
+				// console.log(this.down);
+				this.up = this.td4.getElementsByTagName('input')[2];
+				// number 为编号;
+				this.number = this.tr.getElementsByTagName('td')[1].innerHTML;
+				// checkedbox
+				this.input = this.tr.getElementsByTagName('input')[0];
+				console.log(this.input);
+				this.checknum = 0;
+			}
+			init(){
+				this.del();
+				this.checked();
+			}
+
+			del(){
+				console.log(this.delete);
+				let that = this;
+				this.delete.onclick = function(){
+					console.log(that.number);
+					//请求数据 /delete?id=this.number
+					fetch('/delete?id='+that.number)
+					.then(e=>e.json())
+					.then(e=>{
+						console.log(e);
+						render(e);
+						fn1();
+					})
+				}
+				// console.log('删除');
+			}
+			checked(){
+				// this.input.index = 0;
+				let that = this;
+				this.input.onclick = function(){
+					if(that.checknum == 0){
+						that.checknum=1;
+						seleArr.push(that.number);//添加id
+						console.log(seleArr);
+						checkAll();//全选的判断
+					}else{
+						that.checknum=0;
+						// seleArr.find(that.number);
+						console.log(seleArr);
+						console.log(that.number)
+						//数组中去除id
+						seleArr=seleArr.filter(e=>e!=that.number);
+						console.log(seleArr);
+						checkAll();//全选的判断
+					}
+					console.log(that.checknum);
+			
+				}
+				// console.log(this.input.index);
+			}
+
+
+		}
+
+		for(let i=0;i<trs.length;i++){
+			let t = new tr(i);
+			// t.del();
+			// t.checked();
+			t.init();
+		}
+	}
+	
+//排序：
+let sele0 = document.getElementsByTagName('select')[0];
+let sele1 = document.getElementsByTagName('select')[1];
+let li1 = header.getElementsByTagName('li')[1];
+li1.onclick = function(ev){
+	//提交
+	if(ev.target.value =='提交'){
+		console.log('提交');
+		console.log(sele0.value);
+		console.log(sele1.value);
+		///search?  编号=id/年龄=price  从高到低=2 / 从低到高=1
+		fetch('/search?s0='+sele0.value+'&&s1='+sele1.value)
+		.then(e=>e.json())
+		.then(e=>{
+			if(e.code == 0){
+				render(e);
+				fn1();
+			}
+		});
+	}
+
+	//批量删除
+	if(ev.target.value =='批量删除'){
+		console.log('批量删除');
+		// console.log(sele0.value);
+		/* 这个为后写的，可能有一点问题 */
+		console.log(seleArr);
+		//id=123,2341,
+		for(let i=0;i<seleArr.length;i++){
+			fetch('/delete?id='+seleArr[i])
+			.then(e=>e.json())
+			.then(e=>{
+				console.log(e);
+				render(e);//数据渲染
+				fn1();
+			})
+			
+		}
+		
+	}
+}
+
+//全选的判断
+function checkAll(){
+	let tbody = document.getElementById('tbody');
+	// console.log(tbody);
+	let trs = Array.from(tbody.getElementsByTagName('tr'));
+	
+	if(seleArr.length == trs.length){
+		console.log('全选');
+		All.checked = 'checked';
+		console.log(All);
+	}else{
+		console.log('没有全选');
+		All.checked = false;
+
+	}
+}
+
+let All =document.getElementById('checkAll');
+// console.log(All);
+
+//全选按钮 点击事件
+All.onclick = function(){
+	
+	let tbody = document.getElementById('tbody');
+	// console.log(tbody);
+	let trs = Array.from(tbody.getElementsByTagName('tr'));
+	// this.number = this.tr.getElementsByTagName('td')[1].innerHTML;
+	if(All.checked){
+		// console.log(All.checked);
+		All.checked='checked';
+		seleArr = [];//清空数据
+		for(let i=0;i<trs.length;i++){
+			let idNum=trs[i].getElementsByTagName('td')[1].innerHTML;
+			let input =trs[i].getElementsByTagName('input')[0];
+			// let check = input.get
+			console.log(input)
+			seleArr.push(idNum);//数据处理
+			input.checked ='checked';//页面渲染
+		}
+		console.log(seleArr);
+	}else{
+		All.checked=false;
+		All.removeAttribute('checked');
+		seleArr = [];//数据的更改
+		//页面的渲染
+		for(let i=0;i<trs.length;i++){
+			let input =trs[i].getElementsByTagName('input')[0];
+			console.log(input);
+			input.checked = false;//页面渲染
+		}
+	}
+	
+}
+
+
+	
+
+</script>
+</html>
