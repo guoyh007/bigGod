@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+
+        <button
+            @click = "all"
+        >全选</button>
+        <button
+            @click = "no"
+        >不选</button>
+        <button
+            @click = "reverse"
+        >反选</button>
+
+        <!-- <input 
+        type="checkbox" 
+        v-for="(val,key) in arr"
+        v-model="arr[key]"> -->
+        <!-- !!!这个重要，第一次的时候写错了 -->
+
+       <!--  <input 
+        type="checkbox" 
+        v-for="(val,key) in arr"
+        v-model="arr[key].c"> --><!-- !!!这个重要，第一次的时候写错了 -->
+
+        <input 
+        type="checkbox" 
+        v-for="(val,key) in arr"
+        v-model="arr[key]['c']"><!-- !!!这个重要，第一次的时候写错了 -->
+
+        {{arr}}   
+    </div>
+    <script src="./vue.js"></script> 
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                // arr:[false,false,false,false],
+                arr:[{c:false},{c:false},{c:false},{c:false}],
+            },
+            methods:{
+                all:function(ev){
+                    // console.log(this.arr);
+                    // this.arr=this.arr.map(e =>e = true);
+                    this.arr.forEach(e => {
+                        e.c=true;
+                    });
+                    
+                },
+                no:function(ev){
+                    // this.arr=this.arr.map(e =>e = false);
+                    this.arr.forEach(e => {
+                        e.c=false;
+                    });
+            
+                },
+                reverse:function(ev){
+                    // this.arr=this.arr.map(e => 
+                    //    e=e==true?false:true   
+                    // );
+                    this.arr.forEach(e => {
+                        e.c=e.c==false?true:false;
+                    });
+                },
+                
+
+            }
+
+        })
+    </script>
+    
+</body>
+</html>
