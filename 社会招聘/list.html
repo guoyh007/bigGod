@@ -245,7 +245,7 @@
 		init(xx,that,num);//实现功能：1渲染 2页码
 	}
 
-	// 点击跳转页面 暂时不看
+	//点击跳转页面 
 	rightList.onclick = function(ev){
 			// console.log(ev.target.innerHTML);
 		if(ev.target.innerHTML === '查看详情&gt;&gt;'){
@@ -344,8 +344,11 @@
 		let temp1=`<a href="javascript:;">&lt;</a>`;//把前边存起来
 		let temp2=`<a href="javascript:;">&gt;</a>`;//把后边存起来
 		let temp = "";
+		let hash = window.location.hash;
+		let {num,xx} = hashJX(hash);//封装函数，返回对象，解构赋值
+		console.log(num);
 		for(let i=1;i<numP+1;i++){
-			temp +=` <a class="" href="javascript:;">${i}</a>`//active
+			temp +=`<a class="${i==num?'active':''}" href="javascript:;">${i}</a>`//active
 		}
 		nav.innerHTML = temp1+temp+temp2;
 	}
