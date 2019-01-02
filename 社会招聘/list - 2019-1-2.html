@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		    html,body{
+		    	width: 100%;
+		    	height: 100%;
+		    	margin: 0;
+		    }
+		    body{
+		    	background: url(img/zpbg.png) no-repeat center center;
+		    	background-size: cover;
+		    	display: flex;
+		    }
+		    ul,li{
+		    	margin: 0;
+		    	padding: 0;
+		    	list-style: none;
+		    }
+		    p{
+		    	margin: 0;
+		    }
+		    a{
+		    	text-decoration: none;
+		    	color:#b6bdcf;
+		    }
+		    #content{
+		    	width: 700px;
+		    	height: 460px;
+		    	border-radius: 10px;
+		    	border: 1px solid #30343f;
+		    	margin: auto;
+		    	background: url(img/logo.png) no-repeat 25px 25px #252934;
+		    	box-sizing: border-box;
+		    	padding: 84px 0px 0px 25px;
+		    }
+		    #leftList{
+		    	float: left;
+		    	width: 60px;
+		    	padding-right: 12px;
+		    	height: 100%;
+		    	background: url(img/leftListBg.png) no-repeat right top;
+		    }
+		    #leftList li{
+		    	text-align: right;
+		    	height: 68px;
+		    	padding-top: 12px;
+		    	color: #6a7686;
+		    	font: 10px/18px "微软雅黑";
+		    }
+		    #leftList li span{
+		    	font-size: 12px;
+		    	display: block;
+					cursor: pointer;
+		    }
+		    #leftList .active span{
+		    	color: #ff2c4f;
+		    }
+		    #right{
+		    	width: 600px;
+		    	height: 100%;
+		    	float: left;
+		    }
+		    #rightList li{
+		    	height: 82px;
+		    	width: 100%;
+		    	box-sizing: border-box;
+		    	padding: 20px 25px 20px 30px;
+		    	position: relative;
+					cursor: pointer;
+		    }
+		    #rightList li:hover{
+		    	background-color: #1e212a;
+		    }
+		    #rightList li:hover .num{
+		    	color: #ff2c4f;
+		    }
+		    #rightList li:hover:before{
+		    	content: "";
+		    	width: 2px;
+		    	height: 54px;
+		    	position: absolute;
+		    	background-color: #ff2c4f;
+		    	left: -3px;
+		    	top: 10px;
+		    }
+		    #rightList li:after{
+		    	content: "";
+		    	width: 543px;
+		    	height: 1px;
+		    	position: absolute;
+		    	bottom: 0px;
+		    	right: 25px;
+		    	background:url(img/lineBg.png) repeat-x;
+		    }
+		    #rightList .num{
+		    	font-size: 30px;
+		    	font-family: arial;
+		    	color:#6a7686;
+		    	float: left;
+		    	width: 36px;
+		    	height: 40px;
+		    	border-right: 1px solid #303642;
+		    }
+		    #rightList .list{
+		    	float: left;
+		    	width: 500px;
+		    	margin-left: 6px;
+		    	font-size: 14px;
+		    	color: #b6bdcf;
+		    	font-family: "微软雅黑";
+		    }
+		    #rightList .list span{
+		    	float: left;
+		    }
+		    
+		    .list>a:nth-of-type(1){
+		    	height: 26px;
+		    	float: none;
+		    	font-size: 14px;
+		    }
+		    .job{
+		    	margin-right: 15px;
+		    }
+		    #rightList .list time{
+		    	float: right;
+		    	color: #606a7a;
+		    }
+		    .list .text{
+		    	float: left;
+		    	width: 430px;
+		    	overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+		    }
+		    .list a{
+		    	float: right;
+		    	font-size: 12px;
+		    }
+		    nav{
+		    	font-size: 0px;
+		    	text-align: center;
+		    }
+		    nav a{
+		    	font: 12px/46px "微软雅黑";
+		    	display: inline-block;
+		    	vertical-align: middle;
+		    	width: 24px;
+		    }
+		    nav a.active{
+		    	color: #eb2a4b;
+		    }
+		</style>
+	</head>
+	<body>
+		<div id="content">
+			<ul id="leftList">
+				<li class="active"><span>社会招聘</span>society</li>
+				<li ><span>校园招聘</span>campus</li>
+			</ul>
+			<div id="right">
+				<ul id="rightList">					
+
+				</ul>
+				<nav id="nav">
+					<!-- <a href="javascript:;">&lt;</a>
+					<a class="active" href="javascript:;">1</a>
+					<a href="javascript:;">2</a>
+					<a href="javascript:;">3</a>
+					<a href="javascript:;">4</a>
+					<a href="javascript:;">&gt;</a> -->
+				</nav>
+			</div>
+		</div>
+<script src="js/data.js"></script>
+<script>	
+/* 
+	num 为具体的第几页；  numP 每个数据总共多少页；
+*/
+	let leftList = document.getElementById('leftList');
+	let lis = Array.from(leftList.getElementsByTagName('li')) ;
+
+	let num = 1;
+	let xx
+	init('sh',lis[0]);//首次进入页面，渲染；
+	lis.forEach(function(e){
+		// 每个li的点击事件
+		e.onclick = function (){
+			that = e;
+			if(that.innerHTML.includes('society')){
+				xx = 'sh';
+			};
+			if(that.innerHTML.includes('campus')){
+				xx = 'xy';
+			};
+			console.log(xx);
+			/* 新加 */
+			// window.location.hash = "class="+xx+"&p="+1;
+			init(xx,e);//实现功能：1渲染 2页码 3 hash
+		};
+
+	});
+
+	// 点击跳转页面
+	rightList.onclick = function(ev){
+			// console.log(ev.target.innerHTML);
+		if(ev.target.innerHTML === '查看详情&gt;&gt;'){
+			console.log('dage');
+			let a =ev.target.parentNode.parentNode.prviousElemetsibling;
+			console.log(a);
+			let hash = window.location.hash
+			// localStorage.getItem(,);
+
+		}
+	}
+
+
+	//实现功能：1渲染 2页码 3 hash
+	function init(xx,that){
+		for(let i=0;i<lis.length;i++){
+			lis[i].className = "";
+		}
+		that.className="active";
+		let numP = page(data,xx);//运行page函数 返回页码
+		let arrX = dataArr(num,xx);//运行函数，返回相应的数组
+		// console.log(arrX);
+		Render(arrX,num);//渲染第一页 ,以后还有第几页
+		renderPage(numP);//总共有几页
+		window.location.hash = "class="+xx+"&p="+1;
+	}
+
+	//页码的点击事件  点击页码 哈希值发生变化
+	nav.onclick = function(ev){
+		if(ev.target.innerHTML=='&lt;'){
+			console.log('页码向左事件');
+		}else if(ev.target.innerHTML=='&gt;'){
+			console.log('页码向右事件');
+		}else{
+			let num = ev.target.innerHTML
+			console.log(num);
+			// return num;
+			let hash = window.location.hash;
+			console.log(hash);
+			/*  class=xx&p=1; */
+			
+			let cls = hash.split('&')[0].split('=')[1];// cls 为 sh 或者是 xy 
+			console.log(cls);
+			window.location.hash ="class="+cls+"&p="+num;
+		}
+	}
+
+	//当hash值发生变化的时候
+	window.onhashchange = function(){
+		let hash = window.location.hash;
+		let num = hash.split('#')[1].split('&')[1].split('=')[1];
+		let xx =hash.split('#')[1].split('&')[0].split('=')[0] ;
+		let arrX = dataArr(num,xx);
+		Render(arrX,num);//渲染数据
+	}
+
+	//num 为页码
+	function dataArr(num,xx){
+		let data1 = data[xx].text;
+		console.log(data1);//数组[],只要四个
+		let arr = data1.slice(4*(num-1),4*num);
+		return arr;
+	}
+	// dataArr(numP,sh);
+	// dataArr(numP,xy);
+
+	//获取总页码的  社会招聘 || 学校招聘 
+	function page(data,xx){
+		let data1 = data[xx].text;
+		let numP=Math.ceil(data1.length/4);
+		return numP
+	}
+	// page(data,sh);
+	// page(data,xy);
+
+	//社会 渲染函数 num是第几页
+	function Render(arrX,num){
+		let temp = '';
+		for(let i=0;i<arrX.length;i++){
+			temp+=`<li>
+						<span class="num">${(num-1)*4+i+1}</span>
+						<div class="list">
+							<a href=""><span class="job">职位需求：${arrX[i].zw}</span><span>需求人数：${arrX[i].rs}名</span><time>2014-04-10</time></a>
+							<p><span class="text">岗位要求：学历：${arrX[i].rs},经验：${arrX[i].jy},地点：${arrX[i].dd},公司：${arrX[i].gs}</span><a href="./content.html">查看详情>></a></p>
+						</div>
+					</li>`
+		}
+		rightList.innerHTML = temp;
+	};
+	
+	//页码渲染函数  nump是总共多少页
+	function renderPage(numP){
+		nav.innerHTML = '';
+		let temp1=`<a href="javascript:;">&lt;</a>`;//把前边存起来
+		let temp2=`<a href="javascript:;">&gt;</a>`;//把后边存起来
+		let temp = "";
+		for(let i=1;i<numP+1;i++){
+			temp +=` <a class="" href="javascript:;">${i}</a>`//active
+		}
+		nav.innerHTML = temp1+temp+temp2;
+	}
+	//获取页码中dom
+
+
+	/*
+		渲染导航
+		<li><span>社会招聘</span>society</li>
+		<li class="active"><span>校园招聘</span>campus</li>
+	*/
+	// let arr=[1,2,3,4,5]
+	// console.log(arr.slice(2));//[3, 4, 5]
+	// console.log(arr.slice(2,4));//不包括4 [3, 4]
+	// console.log(arr);//不变 [1, 2, 3, 4, 5]
+
+
+	
+</script>
+</body>
+</html>
