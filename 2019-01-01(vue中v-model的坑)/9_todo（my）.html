@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button 
+            @click="del"
+        >批量删除</button>
+        <input 
+            @change ="change"
+            type="text"
+            v-model="txt"
+        >
+        <ul>
+            <li
+                v-for="(val,key) in arr"
+            ><input 
+                type="checkbox" 
+                v-model = "val.checked"
+                @click="check(val)" 
+            >
+            {{val.name}}</li>
+        </ul>
+        {{arr}}
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                arr:[
+                    {
+                        name:'x',
+                        checked:false
+                    },
+                    {
+                        name:'y' ,
+                        checked:false 
+                    },
+                    {
+                        name:'z' ,
+                        checked:false
+                    },
+                ],
+                txt:"",
+            },
+            methods:{
+                del(){
+                    this.arr=this.arr.filter(e=>
+                        e.checked==false
+                    );
+                    console.log(this.arr)
+                },
+                change(val){
+                    this.arr.unshift({
+                        name:this.txt,
+                        checked:false
+                    });
+                    this.txt="";
+                },
+                check(val){
+                    val.checked=!val.checked;
+                }
+
+            }
+        })
+    </script>
+</body>
+</html>

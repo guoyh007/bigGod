@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表哥</title>
+</head>
+<body>
+    <div id="app">
+        全选：<input
+        type="checkbox"
+        v-model='all'
+        >
+        <hr>
+        <input 
+        type="checkbox"
+        v-for="(val,key) in arr"
+        v-model="val.checked"
+        >
+    </div>
+<script src="./vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            arr:[
+                {
+                    checked:false
+                },
+                {
+                    checked:false
+                },
+                {
+                    checked:false
+                },
+            ]
+        },
+        computed:{
+            all:{
+                get(){
+                    let a =this.arr.every(e=>e.checked==true)
+                    return a
+                },
+                set(newValue){//注意传参
+                    return this.arr.forEach(e=>e.checked=newValue);
+                },
+            },
+        }
+    });
+
+</script>
+</body>
+</html>

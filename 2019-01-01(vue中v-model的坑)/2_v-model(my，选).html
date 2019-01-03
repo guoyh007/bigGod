@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表哥</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- <div
+            v-for = "(val,key) in arr">
+            {{val.name}}
+            <input type="checkbox"
+            @click = "fn(val)"            
+            >
+        </div>
+        {{arr}} -->
+        小红：<input type="checkbox" value="小红"
+        v-model = "arr">
+        <hr>
+        小刚：<input type="checkbox" value="小刚"
+        v-model = "arr">
+        <hr>
+        小强：<input type="checkbox" value="小强"
+        v-model = "arr">
+        <hr>
+        {{arr}}
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+                new Vue({
+            el:'#app',
+            data:{
+                b:false,
+                arr:[ ],
+                // arr2:[],
+
+            },
+
+        })
+        // new Vue({
+        //     el:'#app',
+        //     data:{
+        //         b:false,
+        //         arr:[
+        //             {
+        //              name:"小红",
+        //              checked:false
+        //             },
+        //             {
+        //              name:"小刚",
+        //              checked:false
+        //             },
+        //             {
+        //              name:"小强",
+        //              checked:false
+        //             },
+        //         ],
+        //         // arr2:[],
+
+        //     },
+        //     methods:{
+        //         fn(val){
+        //             val.checked=!val.checked;
+        //         },
+        //     }
+
+        // })
+    </script>
+</body>
+</html>

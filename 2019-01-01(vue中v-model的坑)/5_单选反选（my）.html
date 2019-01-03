@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表哥</title>
+    <style>
+        .active{
+            background: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button
+            @click = "all"
+        >全选</button>
+        <button
+            @click = "un"
+        >反选</button>
+        <button
+            @click = "no"
+        >不选</button>
+        <input 
+            type="checkbox"
+            v-for = "(val,key) in arr"
+        >
+
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                arr:[false,false,false,false,],
+                // color:'red',
+                num:0,
+            },
+            methods:{
+                all(){
+                    console.log(this.arr)
+                    this.arr.forEach(e=>{
+                        e=true;
+                    })
+                },
+                un(){
+
+                },
+                no(){
+
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>

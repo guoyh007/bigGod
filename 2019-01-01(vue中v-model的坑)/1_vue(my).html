@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表哥</title>
+    <style>
+        .active{
+            background: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button
+            @click = "fn()"
+        >按钮</button>
+        <ul>
+            <li 
+                v-for="(val,key) in arr"
+                :class = "{active:val.checked}"
+                @click = "change(val)"
+                @dblclick ="del(val)"
+            >{{ val.name }}</li>
+        </ul>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                arr:[],
+                // color:'red',
+                num:0,
+            },
+            methods:{
+                fn(){
+                    this.arr.unshift({
+                        name:++this.num,
+                        checked:false,
+                    })
+                },
+                change(val){
+                   val.checked=!val.checked;
+                },
+                del(val){
+                    this.arr.shift(val)
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>

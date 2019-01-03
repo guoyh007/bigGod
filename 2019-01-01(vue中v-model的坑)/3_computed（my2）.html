@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表哥</title>
+</head>
+<body>
+    <div id="app">
+        <input
+            type="text"
+            v-model='val'
+            @change ="cg"
+        >
+        <hr>
+        <div>{{ val1 }}</div>
+
+    </div>
+<script src="./vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            val:"",
+            val1:""
+        },
+        methods:{
+            cg(){
+                this.val1=this.val.split("").reverse().join("");
+                return this.val1;
+            },
+        },
+        computed:{
+
+        }
+    });
+
+</script>
+</body>
+</html>
