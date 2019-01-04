@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <xx sex = "boy" :v="vv" title = "t"></xx>
+
+    </div>
+<script src="./vue.js"></script>
+<script>
+    let obj = {
+        template:`
+        <div>
+            <h2>{{ val }}</h2>
+            <p>我是{{ name }}，今年{{ 1+age }}岁，性别是：{{ sex }},梦想是：{{ v }}，---{{ title }}</p>
+        </div>`,
+        props:{
+            // age:{
+            //     type:Number,
+            //     default:118,
+            // },
+            // name:String,
+            sex:String,//不是子元素自己写好的，所以就的写类型
+            v:String,//不是子元素自己写好的，所以就的写类型
+            title:String,
+        },
+        data(){
+            return {
+                val:"大家好！",//子元素自己写好的
+                name:"biaoge",//子元素自己写好的
+                age:18,//子元素自己写好的
+
+            }
+        },
+    }
+    Vue.component('xx',obj)
+
+    new Vue({
+        el:'#app',
+        data:{
+            vv:'走上人生巅峰',
+            t:'人生得意须尽欢',    
+        }
+    });
+    // console.dir(app.firstChild);
+    // console.log(app.firstChild);
+</script>
+</body>
+</html>
