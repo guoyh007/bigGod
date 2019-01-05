@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>圣杯布局</title>
+    <style type="text/css">
+        /* 圣杯布局: 整个父元素的padding内填充*/
+        *{margin: 0;padding:0;}
+        .main{padding:0 220px;}
+        .main>div{float:left;position: relative;height: 300px;}
+        .middle{width: 100%;background-color: red;opacity: .3}
+        
+        .left{
+        width:200px;
+        margin-left:-100%;
+        left:-220px;
+        background-color: #0d85d1;
+        opacity: .3
+        }
+        
+        .right{
+        width: 200px;
+        margin-left:-200px;
+        right:-220px;
+        background-color: #0d85d1;
+        opacity: .5
+        }
+    </style>
+</head>
+<body>
+<!-- 三列布局之 圣杯布局：
+1.让左中右浮动 (在一行显示) ，相对定位
+2.让中间模块的middle宽度为100%
+3.让左边的色块移动到middle的前面  margin-left:-100%
+4.让右边的色块移动到middle的后面  margin-left:-宽度
+5.给三个小块的父元素加一个内填充的属性padding
+6.让左边的块移动到左边 left:-220px
+  让右边的块移动到右边 right:-220px
+-->
+<div class="main">
+    <div class="middle"></div>
+    <div class="left"></div>
+    <div class="right"></div>
+</div>
+</body>
+</html>

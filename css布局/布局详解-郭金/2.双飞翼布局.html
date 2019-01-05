@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>双飞翼布局</title>
+    <style type="text/css">
+        /*双飞翼:  中间middel里面的子容器margin
+         div{position:relative;}
+        .left{left:-220px;}
+        .right{right:-220px;}
+        */
+        *{margin: 0;padding:0}
+        .main>div{float: left;height:300px;}
+        .middle{width: 100%;}
+        .left{
+            width:200px;
+            margin-left:-100%;
+            background-color: red
+            }
+
+        .right{
+            width: 200px;
+            margin-left: -200px;
+            background-color: red
+            }
+
+        .middle-inner{
+            margin:0 220px;
+            height:300px;
+            background-color: darkcyan
+            }
+    </style>
+</head>
+<body>
+<!--双飞翼布局：
+1.给左，中，右 加浮动，在一行显示
+2.给middle宽度为100%
+3.让左边的模块移动middle的左边 margin-left:-100%
+4.让右边的模块移动middle的右边 margin-left:-自己宽度
+5.给middle里面的容器添加外间距 margin: 左右
+-->
+<div class="main">
+    <div class="middle">
+        <div class="middle-inner"></div>
+    </div>
+    <div class="left"></div>
+    <div class="right"></div>
+</div>
+</body>
+</html>
