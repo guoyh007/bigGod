@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表哥的布局</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .main>div {
+        float: left;
+        height: 300px;
+    }
+    .middle {
+        width: 100%;
+        background:rgb(71, 71, 71);
+    }
+    .middle-inner {
+        margin: 0 220px;
+        height: 300px;
+        /* width: 100%;这个不能加 */
+        background: rgb(39, 41, 177);
+    }
+    /* 向左移动百分之百，相当于换了一行，换到了上边一行 */
+    .left {
+        width: 200px;
+        margin-left: -100%;
+        background: red;
+    }
+
+    /* 向左移动上边一行 */
+    .right {
+        width: 200px;
+        margin-left: -200px;
+        background: green;
+    }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="middle">
+            <div class="middle-inner"></div>
+        </div>
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>
