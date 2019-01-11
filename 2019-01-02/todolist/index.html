@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>todos</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body>
+<div id="app">
+
+    <section class="todoapp">
+        <div>
+            <header class="header" >
+                <h1>todos</h1>
+                <input class="new-todo" placeholder="请输入内容" value="" 
+                v-model = "txt" 
+                @change = "change">
+            </header>
+            <section class="main">
+                <input 
+                class="toggle-all"
+                type="checkbox" 
+                checked=""
+                v-model ="all"
+                v-model="arr">
+                <ul class="todo-list">
+                    <li :class = "{completed:val.checked}"
+                    @click = "add(val)"
+                    v-for ="(val,key) in arr">
+                        <div class="view">
+                            <input class="toggle" type="checkbox" checked="" v-model = "val.checked">
+                            <label
+                            >{{ val.text }}</label>
+                            <button class="destroy"
+                            @click="rm(val)"
+                            ></button>
+                        </div>
+                        <!-- <input class="edit" value="多多对对对"> -->
+                    </li>
+                </ul>
+            </section>
+            <footer class="footer">
+	            <span class="todo-count">
+                    <strong
+                    >{{ noSelect }}</strong>
+	            	<span>条未选中</span>
+                </span>
+                <button>未选中项</button>
+                <button>已选中项</button>
+	           <!--  <span class="todo-count">
+	            	<strong>0</strong>
+	            	<span>未选中项</span>
+                </span>
+	            <span class="todo-count">
+	            	<strong>0</strong>
+	            	<span>已选中项</span>
+                </span> -->
+
+            </footer>
+        </div>
+    </section>
+    
+</div>
+<script src="./vue.js"></script>
+<!-- <script src="src/js/vue.js" charset="utf-8"></script>
+<script src="comm/app.js" charset="utf-8"></script> -->
+<script>
+    //获取数据，并通过数据，先渲染页面
+    let obj = [
+                {
+                    text:"多多对对对",
+                    checked:false
+                },
+                {
+                    text:"大表哥",
+                    checked:true
+                },
+                {
+                    text:"你好",
+                    checked:false
+                },
+                {
+                    text:"大哥大",
+                    checked:false
+                },
+            ];
+    let it =localStorage.getItem('data');
+    let data =it||JSON.stringify(obj);//此时为字符串
+    localStorage.setItem('data',data);
+    let a1 =localStorage.getItem('data');
+    let arrX =JSON.parse(a1);
+    console.log(arrX);
+    //封装一个函数，求num值
+    function num(arrX){
+        let num=0;
+        for(let i in arrX){
+            if(!arrX[i].checked){
+                num+=1;
+            }
+        }
+        return num
+    }
+    //封装一个函数，存本地
+    function run(arr){
+        localStorage.clear();
+        localStorage.setItem('data',JSON.stringify(arr));
+    }
+
+    new Vue({
+        el:"#app",
+        data:{
+            txt:'',
+            arr:arrX,
+            arr2:[
+                {
+                    name:"未选中项"
+                },
+                {
+                    name:"已选中项"
+                },
+            ],
+            noSelect:num(arrX),
+        },
+        methods:{
+            //输入内容，渲染数据
+            change(){
+                this.arr.unshift({
+                    text:this.txt,
+                    checked:false
+                });
+                this.txt="";//输入完毕，内容清空
+                run(this.arr)
+                this.noSelect=num(this.arr);//赋值
+            },
+            add(val){
+                val.checked=!val.checked;
+                run(this.arr,this.noSelect)
+                return this.noSelect=num(this.arr);
+            },
+            rm(val){
+                this.arr=this.arr.filter(e=>e!=val);
+                run(this.arr);//
+            }
+        },
+        computed:{
+            all:{
+                get(){
+                   let result = this.arr.every(e=>e.checked==true);
+                    return result
+                },
+                set(newValue){
+                    this.arr.forEach(e=>e.checked=newValue);
+                    this.noSelect=num(this.arr);
+                }
+            }
+        }
+    })
+
+
+</script>
+</body>
+</html>
