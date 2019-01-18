@@ -1,0 +1,4 @@
+#mid .content .c-box .name-container .card>div .serve{
+    display: inline-block;
+    vertical-align: top;
+}
