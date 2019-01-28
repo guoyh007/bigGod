@@ -1,0 +1,828 @@
+/* body,div,ol,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,fieldset,legend,input,textarea,p,blockquote,th,td{
+    margin:0;
+    padding:0;
+} */
+/* 
+    下边这个是有品自己的
+*/
+body, dd, div, dl, dt, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+    font-size: 14px;
+    position: relative;
+    color: rgb(51, 51, 51);
+}
+body a{
+    text-decoration: none;
+}
+#rooter{
+    width: 100%;
+    height: 2000px;
+    position: relative;
+    /* background-color: #fff;; */
+    /* background-color: rgb(173, 28, 28); */
+}
+/* 所有图标 */
+.icons{
+    background-image: url(../img/yp-icons.2bf57ccf.png);
+}
+img{
+    vertical-align: middle;
+}
+/* <!-- h-subTit/ 所有的大标题的class名 --> */
+.h-subTit{
+    color: #333;
+    font-size: 28px;
+    font-weight: 400;
+}
+.h-subTit span{
+    margin-left: 12px;
+    font-size: 14px;
+    color: #999;
+}
+/* 只要是图标 hover之后都变为指针变换形式 */
+.m-icons:hover{
+    cursor: pointer;
+}
+/* 所有灰色字体 */
+.fontcolor-fade{
+    color:rgb(153, 153, 153);
+}
+/* 下边这个是  登录行*/
+#header{
+    width: 100%;
+    height: 48px;
+    background: #333;/* #333;  #e7e7e7  #aa986a #845f3f*/
+    display: flex;
+    justify-content: center;
+    /* font-size: 14px; *//* 可删 */
+    box-shadow:  0 0 3px 3px #e6e6e6;
+}
+#header .header-box{
+    position: relative;/* 11:45 */
+    display: block;
+    width: 1080px;
+    height: 48px;
+    /* background-color: rgb(44, 192, 100); *//*结构显示*/
+    display: flex;
+    justify-content: flex-end;
+}
+#header .fr{
+    /* width: 465px;  */
+    height: 48px;
+    display: flex;
+    justify-content: flex-end;
+    /* background: rgb(224, 215, 87); *//* 最后要删的 */
+}
+#header .fr div{
+    justify-content: flex-end;
+    margin-right: 8px;
+    text-align: center;
+    margin-right: 13px;
+    margin-left: 14px;
+}
+/* 这个是 app下载 图标 */
+#header .fr div .icons-app{
+    display: inline-block;
+    margin-bottom:-9px;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    left:-5px;
+    background-position:0 -1016px;
+}
+#header .fr a{
+    text-decoration:none;
+    line-height: 48px; 
+    color: #e7e7e7;
+    /* margin-left: 8px; */
+}
+#header .fr .down-app{
+    margin-left: -10px;
+}
+#header .fr .line{
+    display: inline-block;
+    width: 1px;
+    height: 16px;
+    background: #e7e7e7;
+    margin-top: 16px;
+}
+#header .fr .clauses-box{
+    width: 174px;
+    display: flex;
+    flex-direction: column;
+/*     background-color: rgb(133, 57, 57); */
+    margin-right: 0px;/* 这个可调 右边的宽度 */
+}
+#header .fr .clauses-box:hover .header-item {
+    display: block;
+}
+
+#header .fr .clauses {
+    width: 161px;
+    height: 48px;
+    justify-content: flex-start;
+    margin-left: 0px;
+}
+
+#header .fr .clauses a{
+    display: inline-block;
+    justify-content: flex-start;
+}
+#header .fr .icons-dropdown{
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-bottom: -9px;
+    background-position: 0px -1662px;/* 这个当时没出来，因为多加了 , */
+}
+
+/* 取消所有li标签的默认格式 */
+li{
+  list-style: none;  
+}
+/* 以下设置 弹出来的盒子 */
+/* #header .fr .clauses-box .show{
+    opacity: 1;
+} */
+#header .fr .clauses-box .hidden{
+    opacity: 0;
+}
+#header .fr .header-item {
+    display: none;
+    width: 160px;
+    height: 70px;
+    box-shadow:0 3px 28px rgba(0,0,0,.1);
+    position: absolute;
+    /* left: 0px; */
+    right: 0px;
+    top: 48px;
+    z-index: 100;/* 让他在最前边 */
+}
+#header .fr .header-item ul li{
+    display: block;
+    width: 160px;
+    height:35px;
+    background: #e7e7e7/* 背景色，以后要修改 */
+    
+}
+#header .fr .header-item ul li a{
+    /* text-decoration: none; */
+    color:#666;
+    line-height: 35px;
+    box-shadow:0 3px 28px rgba(0,0,0,.1);
+}
+#mid-box{
+    display: block;
+}
+#mid{
+    display: block;
+    width: 1080px;
+    margin: 0 auto;
+    /* background: rgb(232, 235, 51); */
+    /* box-shadow: 0 3px 28px rgba(0,0,0,.1); */
+}
+/* 固定条 -- fixBar*/
+.fixBar{
+    display: block;
+    width: 71px;
+/*     height: 350px; *//* 可变，最后删除 */
+    position: fixed;
+    right: 10px;
+    top: 180px;
+    background: #fff;/* 先设置 背景色，用于看结构，以后删除 */
+    box-shadow: 0 3px 28px rgba(0,0,0,.1);/*  0 0 3px 3px #e6e6e6; */
+    z-index: 999;
+}
+.fixBar li {
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 12px;
+    width: 35px;
+    cursor: pointer;
+    position: relative;
+    /* height: 80px; */
+    /* background: yellowgreen; */
+    border-bottom:1px solid #e7e7e7;
+    text-align: center;
+}
+.fixBar li img{
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;/* 让图片居中 */
+}
+/* hover */
+/* :hover.fixBar ul:nth-child(1){
+    .fix-server.display :
+} */
+.fixBar ul li:hover{
+    color:#845f3f;
+}
+.fixBar ul li:hover .fix-server{
+    /* background: rgb(160, 231, 79); */
+    transition: all 0.1s;
+    display: block;
+
+}
+.fixBar li .fix-server{
+    position: absolute;
+    top: 0px;
+    right:75px;
+    display: none;
+    width: 212px;
+    /* height: 300px; */
+    background: #fff;
+    border: 1px solid #dfdfdf;
+    font-size: 12px;
+}
+/* li标签里边所有的content */
+.fixBar li .content{
+    position: relative;
+    padding: 10px 10px;
+}
+.fixBar li .fix-server .info-title {
+    margin-top: 8px;
+    color: rgb(51, 51, 51);
+}
+.fixBar li .fix-server .info-day{
+    margin-top: 1px;
+    color: rgb(102, 102, 102);
+    font-size: 12px;
+}
+.fixBar li .fix-server .content .info-des {
+    margin-top: 18px;
+    color: rgb(51, 51, 51);
+} 
+
+.fixBar li .fix-server div .info-phone{
+    margin-top: 15px;
+    color: rgb(132, 95, 63);
+    font-size: 20px;
+}
+.fixBar li a{
+    position: absolute;/* 这个原来是绝对定位 */
+    top: 30px;
+    right: -10px;
+    display: block;
+    width: 14px;
+    height: 16px;
+    background-image: url(../img/三角右3.png);
+}
+/* 第一个li结束 */
+/* 第二个li开始 */
+/* .fixBar li */
+.fixBar ul li:hover .fix-code{
+    display: block;
+}
+.fixBar li .fix-code{
+    position: absolute;
+    top: 0px;
+    right:75px;
+    display: none;/* 暂时 */
+    background: #fff;
+    border: 1px solid #dfdfdf;
+    font-size: 12px;
+}
+.fixBar li .fix-code .content img{
+    width: 88px;
+    height: 88px;
+    margin: 0 auto;
+    border: 1px solid #e7e7e7;
+}
+.fixBar li .fix-code .content p{
+    margin-top: 8px;
+    text-align: center;
+    width: 98px;
+}
+.fixBar li .fix-code .content{
+    padding: 10px 10px;
+}
+/* 第二个li结束开始 第三个li */
+.fixBar ul li:hover .fix-gift{
+    display: block;
+}
+.fixBar li .fix-gift{
+    position: absolute;
+    top: 0px;
+    right:75px;
+    display: none;/* 暂时 */
+    background: #fff;
+    border: 1px solid #dfdfdf;
+    font-size: 12px;
+}
+/* 图片 */
+.fixBar li .fix-gift .content div{
+    width: 190px;
+    height: 152px;
+    margin-bottom: 20px;
+    background: url(../img/gift-gd.3f999fde.png);
+    background-size: 100%;
+}
+.fixBar li .fix-gift .content img{
+    display: block;
+    width: 80px;
+    height: 80px;
+    padding: 8px;
+    border: 1px solid #e7e7e7;
+}
+/* 第三个li结束，开始第4个li */
+.fixBar ul:nth-child(4) img{
+    display: block;
+    width: 120px;
+    height: 120px;
+}
+/* 以下是中间(mid)部分 */
+#mid .mid-header{
+    display: block;
+    height: 71px;
+    background:  #fff;
+    position: relative;
+}
+#mid .mid-header .m-logo{
+    position: absolute;
+    bottom: 0;
+    height: 51px;
+    width: 123px;
+    background: url(../img/m-logo.png) no-repeat;
+    background-size: 100%;
+     /* background: #dfdfdf;  */
+}
+#mid .mid-header .mid-header-top ul{
+    /* height: 60px; */
+  /*   background: rgb(196, 149, 19); *//* 这个是li类的背景色，用来区分结构 */
+    /* margin-top: 10px; */
+    position: absolute;
+    bottom: 0px;
+    left: 300px;
+}
+#mid .mid-header ul li:hover a{
+    color: #845f3f;
+}
+#mid .mid-header ul li{
+    display: inline-block;
+    margin-right: 20px;
+}
+#mid .mid-header ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    line-height:51px;     
+    color: #666;
+}
+#mid .mid-header .mid-header-top .m-search{
+    width: 296px;
+    height: 42px;
+   /*  background: rgb(171, 236, 19); *//* 这个是搜索框 */
+    float: right;
+    position: relative;
+    left: -12px;
+    top: 20px;
+}
+
+
+/* 这个是购物车图标 */
+#mid .mid-header .buy{
+    float: right;
+    position: relative;
+    top: 38px;
+    right: 10px;
+    display: block;
+    width: 25px;
+    height: 25px;
+    background: url(../img/购物车.png) no-repeat;
+    background-size: 100%;
+}
+/* 搜索div */
+#mid .mid-header .m-search{
+    position: relative;
+    border-bottom: solid 1px  #e7e7e7;
+}
+/* 搜索行的图片 */
+#mid .mid-header .mid-header-top .search-picture{
+    position: absolute;
+    bottom: 4px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(../img/search.png) no-repeat;
+    background-size: 100%;
+}
+#mid .mid-header .mid-header-top .search-picture:hover{
+    background: url(../img/search-c.png) no-repeat;
+    background-size: 100%;
+    transition: all .3s;
+}
+/* 搜索的input框 */
+#mid .mid-header .mid-header-top input{
+    display: inline-block;
+    position: absolute;
+    bottom: 4px;
+    right: 20px;
+    width: 245px;
+    height: 20px;
+    border: none;
+    margin-top: 10px;
+    color:#333;
+    outline: 0;
+}
+#mid .mid-header .mid-header-top input[name="color"]{
+    color: red;
+}
+/* input框中显示的字体颜色 */
+input::-webkit-input-placeholder{
+    color:rgb(200, 201, 200);
+}
+#mid hr{
+    /* position: relative; */
+    border: 0.5px solid #e7e7e7;
+}
+/*   <!--@@@@@@@@@@@@@@@@ 这里是content --> */
+#mid .content{
+    margin-top: 50px;
+    width: 100%;
+    /* background: #845f3f; */
+}
+#mid .content .c-box{
+    width: 100%;
+    height: 531px;
+    /* background: red; */
+    display: flex;
+    justify-content:space-between;
+}
+/* box1  图片  左*/
+#mid .content .c-box .img-container{
+    width: 464px;
+    height: 433px;
+    /* background-color: #f4f4f4; */
+    /* border: 0.5px solid #c4c4c4; */
+    /* position: relative; */
+    display: flex;
+    justify-content:space-between;
+}
+/* 轮播小图 集合 */
+#mid .content .c-box .img-container .banner-box{
+    overflow: hidden;
+    /* display: flex; */
+
+}
+#mid .content .c-box .img-container ul{
+    display: flex;
+    flex-direction: column;
+    width: 83px;
+}
+#mid .content .c-box .img-container ul li{
+    display: flex;
+    /* width: 100%; */
+    height: 99px;
+    border:1px solid #ececec;
+    margin-bottom: 11px;
+    overflow: hidden;
+    /* background-color: #f4f4f4; */
+}
+#mid .content .c-box .img-container ul .active{
+    border-color:rgb(132, 95, 63);
+}
+#mid .content .c-box .img-container ul li img{
+    width: 83px;
+    background-size: 100%;
+}
+
+/* box2  名字  右*/
+#mid .content .c-box .name-container{
+    width: 561px;
+    height: 527px;/* 要删 */
+    /* background: rgb(228, 227, 227); */
+}
+#mid .content .c-box .name-container .name-list p:nth-child(1){
+    vertical-align: middle;
+    line-height: 26px;
+    font-size: 20px;
+    color: #333;
+}
+#mid .content .c-box .name-container .name-list p:nth-child(2){
+    line-height: 18px;
+    font-size: 12px;
+    color: #999;
+    margin-top: 8px;
+}
+/* card 开始 */
+#mid .content .c-box .name-container .card{
+    margin-top: 22px;
+    background-color: #f9f9f9;
+    padding-top: 5px;
+    padding-bottom: 25px;
+}
+#mid .content .c-box .name-container .card span{
+    font-size: 12px;
+}
+#mid .content .c-box .name-container .card .price{
+    color: #c00000;
+    font-size: 30px;
+} 
+#mid .content .c-box .name-container .card>div{
+    margin-left: 11px;
+    margin-top: 20px;
+}
+#mid .content .c-box .name-container .card .price-box{
+    display: flex;
+    align-items: center;
+}
+#mid .content .c-box .name-container .card .price-box .unit{
+    font-size: 14px;
+}
+#mid .content .c-box .name-container .card .price-box>div{
+    margin-left: 34px;
+}
+#mid .content .c-box .name-container .card>div .serve{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 16px;
+    margin-left: 12px;
+}
+/* card 结束 */
+#mid .content .c-box .name-container .sale-detail>div{
+    margin-left: 11px;
+    /* margin-top: 20px; */
+} 
+#mid .content .c-box .name-container .sale-detail div:nth-child(1){
+    margin-top: 20px;
+}
+.type{
+    margin-left: 30px;
+}
+#mid .content .c-box .name-container .sale-detail .name-box .type{
+    display: inline-block;
+}
+#mid .content .c-box .name-container .sale-detail .type-box span{
+    /* display: block; */
+
+
+}
+.type-box .type{
+    width: 390px;
+    display: inline-block;
+    vertical-align: -45px;
+    /* vertical-align: super; */
+}
+/* 类型   现货 礼卡 */
+#mid .content .c-box .name-container .sale-detail>div .type li{
+    display: inline-block;
+    border: 1px solid #d6d6d6;
+    font-size: 14px;
+    text-align: center;
+    line-height: 40px;
+    width: 68px;
+    height: 30px;
+    margin-right: 14px;
+    line-height: 30px;
+    margin-bottom: 14px;
+}
+
+/* -  + */
+#mid .content .c-box .name-container .count {
+    display: flex;
+    height: 30px;
+    margin-top: 15px;
+    margin-left: 11px;
+}
+#mid .content .c-box .name-container .count .nums{
+    width: 130px;
+    /* height: 30px; */
+    border: 1px solid #D6D6D6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#mid .content .c-box .name-container .count .nums div{  
+    width: 34px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+#mid .content .c-box .name-container .count>div .less{
+    width: 30px;
+    height: 30px;
+    background-image: url(../img/减.png);
+}
+#mid .content .c-box .name-container .count>div .add{
+    width: 30px;
+    height: 30px;
+    /* background-image: url(../img/add.png); */
+    background-image: url(../img/加.png);
+    background-size: 100%;
+}
+#mid .content .c-box .name-container .count .nums .count-num{
+    width:60px;
+    height: 100%;
+    text-align: center;
+    line-height: 30px;
+    border-left: 1px solid #D6D6D6;
+    border-right: 1px solid #D6D6D6;
+}
+/* 按钮  立即购买 */
+.button-box{
+    display: flex;
+}
+.button-box div{
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 15px;
+
+}
+.button-box .button{
+    width: 165px;
+    height: 50px;
+    border: 1px solid #845f3f;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 50px;
+}
+.button-box .active{
+    background: #845f3f;
+    color: #fff;
+}
+.button-box .box1{
+    border: 1px solid #999;
+    border-radius: 2px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+.button-box .box1 img{
+    width: 30px;
+    height: 30px;
+}
+.button-box .box1 p{
+    font-size: 12px;
+}
+/* 详情 */
+#mid .content .detail{
+    width: 774px;
+}
+#mid .content .detail .title{
+    width: 100%;
+    height: 44px;
+    background-color: #e7e7e7;
+
+}
+#mid .content .detail .title ul {
+    height: 42px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+#mid .content .detail .title ul li{
+    width: 128px;
+    font-size: 13px;
+    text-align: center;
+}
+#mid .content .detail .title>div{
+    width: 128px;
+    height: 2px;
+    background: #845f3f;
+    /* margin-left: 128px; *//* 这个用来滑动 js操作 */
+}
+.detail .img-container{
+    width: 100%;
+}
+.detail .img-container img{
+    width: 100%;
+}
+
+
+
+
+/*登录注册页面  显示 和隐藏*/
+.show{
+    position: fixed;
+    top:0px;
+    width: 100%;
+    height: 1000px;
+    display: block;
+    z-index: 999;
+    background: rgba(0,0,0,.7);
+}
+.hidden{
+    display: none;
+}
+#login-business .layout-layout-element{
+    margin: 0 auto;
+    margin-top:150px;
+    width: 450px;
+    height: 293px;
+    display: block;
+    background: #fff;
+    position: relative;
+    /* padding-top: 50px; */
+}
+/* 关闭 图标 */
+#login-business .layout-layout-element  .close .m-icons-close{
+    display: block;
+    position: absolute;
+    top:10px;
+    right: 10px;
+    width: 13px;
+    height: 13px;
+    background: url(../img/closed.png) no-repeat;
+    background-size: 100%;
+}
+#login-business .login-content{
+    position: absolute;;/*  */
+    top: 47px;
+    
+    display: block;
+    margin: 0 40px;
+    width: 370px;
+}
+#login-business .login-content .agreement-container{
+    margin-top: 20px;
+}
+#login-business .title{
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    /* margin-top: 50px; */
+
+}
+#login-business .content a{
+    color: #845f3f;
+}
+.button-lists{
+    text-align: center;
+    font-size: 18px;
+}
+.button-lists>div{
+    margin-top: 25px;
+    display: inline-block;
+    width: 160px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 20px;
+    border:1px solid #845f3f;
+    border-radius: 3px;
+}
+.button-lists .agr{
+    color: #fff;
+    background-color: #845f3f;
+    border-color: #845f3f;
+}
+ /* 这个是公司详情，工商信息 */
+#m-footer{
+    display: block;
+    /* background:red; */
+    /* position: absolute; */
+    /* bottom: 0; */
+    margin-top: 70px;
+    width: 100%;
+    z-index: 1;
+}
+#m-footer hr{
+    border: 0.5px solid rgba(87, 87, 86, 0.2)
+}
+#m-footer .m-footer-container{
+    /* background: #b04337; */
+    width: 1080px;
+    height: 45px;
+    display: flex;
+    justify-content:space-between;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    /* position: absolute;
+    bottom: 0; */
+}
+
+#m-footer .m-f-logo{
+    line-height: 45px;
+    /* justify-content: flex-start; */
+}
+#m-footer .m-f-logo img{
+    width: 123px;
+    height: 45px;
+    margin-right: 25px;
+    /* display: inline-flex; */
+}
+#m-footer .f-info{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 12px;
+}
+/* #m-footer .f-info */
+#m-footer .f-logo img{
+    width: 100px;
+    height: 36px;
+    margin-left: 40px;
+}
+#m-footer .f-info-fr p span{
+    margin-right: 5px;
+}
+
+

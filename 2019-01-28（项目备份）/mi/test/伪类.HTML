@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    #green{
+        width: 1000px;
+        height: 100px;
+        background: green;
+    }
+    .red{
+        margin-left: 100px;
+        display: inline-block;
+        width: 100px;
+        height: 98px;
+        background:rgb(216, 124, 4);
+        border: 1px solid black;
+    }
+    #green:before{
+        content: "";
+        width: 100px;
+        height: 100px;
+        background: black;
+        display: inline-block;
+        /* z-index: -100; */
+    }
+    span{
+        width: 200px;
+        height: 40px;
+    }
+    </style>
+</head>
+<body>
+    <div id="green">
+        <div class="red wei"></div>
+        <div class="red"></div>
+        <div class="red"></div>
+        
+    </div>
+    <span>中国</span>
+    <span>按时啊</span>
+</body>
+</html>
