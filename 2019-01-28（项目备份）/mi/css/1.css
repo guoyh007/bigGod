@@ -490,7 +490,7 @@ input::-webkit-input-placeholder{
     position: absolute;
     top:0px;
     left: 221px;
-    display: none;/* 显示或者隐藏 */
+    display: block;/* 显示或者隐藏 */
     width: 829px;
     height: 337px;
     /* background: #b04337; */
