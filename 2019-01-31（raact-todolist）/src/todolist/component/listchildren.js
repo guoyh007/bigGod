@@ -43,6 +43,10 @@ class Listchildren extends Component {
                 this.blur();
             });
         }
+        //按了enter之后用，直接调用blur
+        if(ev.keyCode === 13){
+            this.blur();
+        }
     }
     render() {
         let {val,checked} = this.props;
