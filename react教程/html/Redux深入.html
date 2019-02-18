@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>珠峰培训React教程</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css">
+</head>
+<body>
+<div class="nav">
+    <div class="logo">
+        
+            珠峰培训React教程
+        
+    </div>
+<ul><li><a href="../index.html">React基础篇</a></li><li><a href="../html/Redux应用.html">Redux应用</a></li><li class="active"><a href="../html/Redux深入.html">Redux深入</a></li><li><a href="../html/React-Redux.html">React-Redux</a></li><li><a href="../html/MiddleWare应用.html">MiddleWare应用</a></li><li><a href="../html/React路由.html">React路由</a></li></ul></div>
+
+
+<div class="warpper">
+
+    <div class="page-toc">
+        <ul><li><a href="#t0Redux深入">Redux深入</a><ul><li><a href="#t11.redux文件拆分">1.redux文件拆分</a></li><li><a href="#t22.实现多个counter">2.实现多个counter</a></li></ul></li></ul>
+    </div>
+    
+    <div class="content markdown-body">
+        <h2 id="t0Redux&#x6DF1;&#x5165;">Redux&#x6DF1;&#x5165; <a href="#t0Redux&#x6DF1;&#x5165;"> # </a></h2>
+<h3 id="t11.redux&#x6587;&#x4EF6;&#x62C6;&#x5206;">1.redux&#x6587;&#x4EF6;&#x62C6;&#x5206; <a href="#t11.redux&#x6587;&#x4EF6;&#x62C6;&#x5206;"> # </a></h3>
+<p>&#x6211;&#x4EEC;&#x5C06;&#x8BA1;&#x6570;&#x5668;&#x7684;&#x6848;&#x4F8B;&#x8FDB;&#x884C;&#x6587;&#x4EF6;&#x62C6;&#x5206;,&#x4F7F;&#x4EE3;&#x7801;&#x66F4;&#x52A0;&#x5BB9;&#x6613;&#x7EF4;&#x62A4;&#x548C;&#x9605;&#x8BFB;,&#x6211;&#x4EEC;&#x6765;&#x589E;&#x52A0;&#x4E00;&#x4E2A;store&#x6587;&#x4EF6;&#x5939;</p>
+<pre><code>store
+    &#x2502;  action-types.js
+    &#x2502;  index.js
+    &#x2502;
+    &#x251C;&#x2500;actions
+    &#x2502;      counter.js
+    &#x2502;
+    &#x2514;&#x2500;reducer
+            counter.js
+</code></pre><ul>
+<li><p>action-types&#x7528;&#x6765;&#x5B58;&#x653E;&#x9700;&#x8981;&#x7684;&#x5E38;&#x91CF;</p>
+<pre><code>  export const ADD = &apos;ADD&apos;;
+  export const MINUS = &apos;MINUS&apos;;
+</code></pre></li>
+<li><p>counter&#x4E2D;&#x5B58;&#x653E;reducer&#x7684;&#x903B;&#x8F91;</p>
+<pre><code>  import * as Types from &apos;../action-types&apos;
+  export default function reducer(state={number:0},action) {
+    switch (action.type){
+      case Types.ADD:
+        return {number:state.number + action.amount};
+      case Types.MINUS:
+        return {number:state.number - action.amount};
+    }
+    return state;
+  }
+</code></pre></li>
+<li><p>store&#x4E2D;&#x7684;index&#x6587;&#x4EF6;&#x7528;&#x6765;&#x521B;&#x5EFA;store</p>
+<pre><code>  import {createStore} from &apos;../redux&apos;;
+  import reducer from &apos;./reducer/counter&apos;;
+  export default createStore(reducer);
+</code></pre></li>
+<li><p>&#x7EC4;&#x4EF6;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x53EF;&#x66F4;&#x6539;&#x4E3A;</p>
+<pre><code>  import React,{Component} from &apos;react&apos;
+  import ReactDOM,{render} from &apos;react-dom&apos;;
+  import store from &apos;./store&apos;;
+  import * as Types from &apos;./store/action-types&apos;
+  class Counter extends React.Component {
+    constructor(){
+      super();
+      this.state = {number:store.getState().number}
+    }
+    componentDidMount(){
+      store.subscribe( () =&gt; {
+        this.setState({number:store.getState().number})
+      })
+    }
+    handleAddClick=()=&gt;{
+      store.dispatch({type:Types.ADD,amount:1});
+    };
+    handleMinusClick=()=&gt;{
+      store.dispatch({type:Types.MINUS,amount:1});
+    };
+    render(){
+      return &lt;div&gt;
+        &lt;p&gt;{this.state.number}&lt;/p&gt;
+        &lt;button onClick={this.handleAddClick}&gt;+&lt;/button&gt;
+        &lt;button onClick={this.handleMinusClick}&gt;-&lt;/button&gt;
+      &lt;/div&gt;
+    }
+  }
+
+  ReactDOM.render(&lt;Counter/&gt;,window.root);
+</code></pre></li>
+</ul>
+<blockquote>
+<p>&#x6B64;&#x65F6;&#x6211;&#x4EEC;&#x53D1;&#x73B0;&#x5728;redux&#x548C;&#x7EC4;&#x4EF6;&#x4E2D;&#x90FD;&#x5E94;&#x7528;&#x4E86;action-types&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x7EE7;&#x7EED;&#x8FDB;&#x884C;&#x62C6;&#x5206;,&#x5728;store&#x4E0B;&#x521B;&#x5EFA;action&#x6587;&#x4EF6;&#x5939;,&#x7528;&#x6765;&#x751F;&#x6210;action&#x5BF9;&#x8C61;,&#x6211;&#x4EEC;&#x7BA1;action&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x79F0;&#x4E4B;&#x4E3A;actionCreator</p>
+</blockquote>
+<ul>
+<li><p>action&#x6587;&#x4EF6;&#x5939;&#x4E2D;&#x7684;counter,&#x7528;&#x6765;&#x751F;&#x6210;&#x5BF9;&#x5E94;&#x7EC4;&#x4EF6;&#x7684;action&#x5BF9;&#x8C61;</p>
+<pre><code>  import * as Types from &apos;../action-types&apos;
+  export default {
+    add(amount){
+      return {type:Types.ADD,amount}
+    },
+    minus(amount){
+      return {type:Types.MINUS,amount}
+    }
+  }
+</code></pre></li>
+<li><p>&#x518D;&#x6B21;&#x66F4;&#x6539;&#x7EC4;&#x4EF6;&#x4EE3;&#x7801;</p>
+<pre><code>  import React,{Component} from &apos;react&apos;
+  import ReactDOM,{render} from &apos;react-dom&apos;;
+  import store from &apos;./store&apos;;
+  import actions from &apos;./store/actions/counter&apos;
+  class Counter extends React.Component {
+    constructor(){
+      super();
+      this.state = {number:store.getState().number}
+    }
+    componentDidMount(){
+      store.subscribe( () =&gt; {
+        this.setState({number:store.getState().number})
+      })
+    }
+    handleAddClick=()=&gt;{
+      store.dispatch(actions.add(1));
+    };
+    handleMinusClick=()=&gt;{
+      store.dispatch(actions.minus(1));
+    };
+    render(){
+      return &lt;div&gt;
+        &lt;p&gt;{this.state.number}&lt;/p&gt;
+        &lt;button onClick={this.handleAddClick}&gt;+&lt;/button&gt;
+        &lt;button onClick={this.handleMinusClick}&gt;-&lt;/button&gt;
+      &lt;/div&gt;
+    }
+  }
+  ReactDOM.render(&lt;Counter/&gt;,window.root);
+</code></pre></li>
+</ul>
+<blockquote>
+<p>&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x5C06;redux&#x7684;&#x6D41;&#x7A0B;&#x8FDB;&#x884C;&#x4E86;&#x8BE6;&#x7EC6;&#x7684;&#x62C6;&#x5206;,&#x8BA9;&#x6211;&#x4EEC;&#x6765;&#x603B;&#x7ED3;&#x4E00;&#x4E0B;redux&#x7684;&#x6D41;&#x7A0B;&#x5427;&#xFF1A;</p>
+</blockquote>
+<p><img src="http://son.fullstackjavascript.cn/redux.png" alt=""></p>
+<h3 id="t22.&#x5B9E;&#x73B0;&#x591A;&#x4E2A;counter">2.&#x5B9E;&#x73B0;&#x591A;&#x4E2A;counter <a href="#t22.&#x5B9E;&#x73B0;&#x591A;&#x4E2A;counter"> # </a></h3>
+<p>&#x5728;redux&#x4E2D;&#x53EA;&#x80FD;&#x62E5;&#x6709;&#x4E00;&#x4E2A;store&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5C06;&#x591A;&#x4E2A;&#x72B6;&#x6001;&#x8FDB;&#x884C;&#x5408;&#x5E76;,&#x72B6;&#x6001;&#x662F;&#x901A;&#x8FC7;reducer&#x8FD4;&#x56DE;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;&#x591A;&#x4E2A;reducer&#x8FDB;&#x884C;&#x5408;&#x5E76;&#x8FBE;&#x5230;&#x5408;&#x5E76;&#x72B6;&#x6001;&#x7684;&#x76EE;&#x7684;&#x3002;</p>
+<pre><code>&#x2502;  index.js
+&#x2502;  redux.js
+&#x2502;
+&#x251C;&#x2500;components
+&#x2502;      counter1.js
+&#x2502;      counter2.js
+&#x2502;
+&#x2514;&#x2500;store
+    &#x2502;  action-types.js
+    &#x2502;  index.js
+    &#x2502;
+    &#x251C;&#x2500;actions
+    &#x2502;      counter1.js
+    &#x2502;      counter2.js
+    &#x2502;
+    &#x2514;&#x2500;reducer
+            counter1.js
+            counter2.js
+            index.js
+</code></pre><blockquote>
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5C06;counter1&#x7684;&#x903B;&#x8F91;&#x8FDB;&#x884C;&#x62F7;&#x8D1D;&#xFF0C;&#x7C98;&#x8D34;&#x51FA;counter2</p>
+</blockquote>
+<ul>
+<li><p>action-types&#x65B0;&#x589E;counter2&#x5904;&#x7406;&#x7684;&#x5E38;&#x91CF;</p>
+<pre><code class="lang-diff">  export const ADD = &apos;ADD&apos;;
+  export const MINUS = &apos;MINUS&apos;;
+
+  + export const INCREMENT = &apos;INCREMENT&apos;;
+  + export const DECREMENT = &apos;DECREMENT&apos;;
+</code></pre>
+</li>
+<li><p>&#x5BF9;&#x5E94;&#x7684;counter2&#x4E2D;&#x7684;action&#x4E5F;&#x8FDB;&#x884C;&#x66F4;&#x6539;</p>
+<pre><code>  import * as Types from &apos;../action-types&apos;
+  export default {
+    add(amount){
+      return {type:Types.INCREMENT,amount}
+    },
+    minus(amount){
+      return {type:Types.DECREMENT,amount}
+    }
+  }
+</code></pre></li>
+<li><p>&#x540C;&#x6837;reducer&#x4E2D;&#x5904;&#x7406;&#x4E5F;&#x662F;&#x4E00;&#x6837;&#x7684;</p>
+<pre><code>  import * as Types from &apos;../action-types&apos;
+  export default function reducer(state={number:0},action) {
+    switch (action.type){
+      case Types.INCREMENT:
+        return {number:state.number + action.amount};
+      case Types.DECREMENT:
+        return {number:state.number - action.amount};
+    }
+    return state;
+  }
+</code></pre><blockquote>
+<p>&#x73B0;&#x5728;&#x95EE;&#x9898;&#x51FA;&#x73B0;&#x4E86;&#x6211;&#x4EEC;&#x62E5;&#x6709;&#x4E86;&#x4E24;&#x4E2A;reducer,&#x6211;&#x4EEC;&#x8981;&#x5C06;&#x4E24;&#x4E2A;reducer&#x8FDB;&#x884C;&#x5408;&#x5E76;,&#x5408;&#x5E76;&#x6210;&#x4E00;&#x4E2A;&#x65B0;&#x7684;reducer</p>
+</blockquote>
+</li>
+<li><p>combineReducers</p>
+<pre><code> import counter1 from &apos;./counter1&apos;;
+ import counter2 from &apos;./counter2&apos;;
+ let combineReducers = (reducers) =&gt; {
+   return (state={},action)=&gt;{
+     let obj = {};
+     for(let key in reducers){
+       obj[key] = reducers[key](state[key],action); //&#x8C03;&#x7528;&#x539F;&#x6709;&#x7684;reducer&#x5C06;&#x8FD4;&#x56DE;&#x7684;&#x7ED3;&#x679C;&#x653E;&#x5230;&#x5BF9;&#x8C61;&#x4E0A;
+     }
+     return obj; // &#x5C06;&#x5408;&#x5E76;&#x540E;&#x7684;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x8FD4;&#x56DE;&#x5373;&#x53EF; {counter1:{number:0},counter2:{number:0}}
+   }
+ };
+ export default combineReducers({
+   counter1,counter2
+ });
+</code></pre></li>
+<li><p>&#x6700;&#x540E;&#x7EC4;&#x4EF6;&#x4E2D;&#x83B7;&#x53D6;&#x72B6;&#x6001;&#x8981;&#x589E;&#x52A0;&#x5408;&#x5E76;&#x65F6;&#x7684;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x6765;&#x83B7;&#x53D6;</p>
+<pre><code>  constructor(){
+      super();
+      this.state = {number:store.getState().counter1.number}
+  }
+  componentDidMount(){
+      store.subscribe( () =&gt; {
+          this.setState({number:store.getState().counter1.number})
+      })
+  }
+</code></pre></li>
+</ul>
+
+        <div class="copyright">Powered by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a>. Dependence <a href="https://nodejs.org">Node.js</a> run.</div>
+    </div>
+    
+</div>
+
+
+</body>
+</html>
