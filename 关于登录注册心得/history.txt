@@ -1,0 +1,2 @@
+ 登录的成功的时候，页面跳转：可以用history
+this.props.history.push('/', null);
