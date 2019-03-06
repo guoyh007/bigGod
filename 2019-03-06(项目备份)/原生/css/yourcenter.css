@@ -1,0 +1,166 @@
+
+/*   <!--@@@@@@@@@@@@@@@@ 这里是center--> */
+#mid-one{
+    background: #FAFAFA;
+}
+
+#mid-one .content{
+    width: 1080px;
+    margin: 0 auto;
+
+}
+#mid-one .content .nav{
+    widows: 100px;
+    padding-top: 37px;
+    /* height: 86px; */
+    padding-bottom: 20px;
+}
+#mid-one .content .nav .nav-container{
+    height: 23px;
+}
+#mid-one .content .nav .nav-container span:last-child a{
+    color: #999;
+}
+#mid-one .content .container{
+    display: flex;
+    height: 500px;
+    justify-content: flex-start;
+}
+/* 左边 小盒子 */
+#mid-one .content .container .center {
+    width: 173px;
+    height: 100%;
+    background: #ffffff;
+
+} 
+#mid-one .content .container .center .header{
+    background: #fff;
+    border-bottom: 0.5px solid #e7e7e7;
+    padding: 36px 10px;
+    text-align: center;
+}
+#mid-one .content .container .center .head-picture{
+    margin: 0 auto;
+    width: 54px;
+    height: 54px;
+    background: url(../img/头像.png) no-repeat;
+    background-size: 100%;
+}
+#mid-one .content .container .center .header p{
+    margin-top: 10px;
+}
+
+
+
+#mid-one .content .container .center ul{
+    margin-top: 10px;
+}
+#mid-one .content .container .center ul li{
+    height: 51px;
+    /* background: rebeccapurple; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#mid-one .content .container .center ul li span{
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    background: #FAFAFA;
+}
+#mid-one .content .container .center ul li a{
+    margin-left: 8px;
+}
+/* active 下的状态 */
+#mid-one .content .container .center ul .active span{
+    background: #845f3f; 
+}
+.active{
+    color: #845f3f;  
+}
+.active a{
+    color: #845f3f;
+}
+
+#mid-one .content .container .detail{
+    margin-left: 10px;
+    padding-left: 60px;
+    width: 900px;
+    height: 100%;
+    background: #fff;
+}
+#mid-one .content .container .detail .title{
+    display: flex;
+    justify-content: space-between;
+}
+#mid-one .content .container .detail ul{
+    height: 46px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+#mid-one .content .container .detail ul li{
+    margin-top: 13px;
+    margin-right: 50px;
+    font-size: 16px;
+}
+#mid-one .content .container .detail ul li div{
+    line-height: 30px;
+}
+li:hover{
+    color: #845f3f;
+}
+/* 线 */
+#mid-one .content .container .detail .line{
+    width: 100%;
+    height: 2px;
+    background: #fff;
+}
+#mid-one .content .container .detail .active p{
+    width: 100%;
+    height: 2px;
+    background: #845f3f;
+}
+
+#mid-one .content .container .detail .big-detail{
+    width: 100%;
+    height: 100%;
+}
+.big-detail .no-detail{
+    /* display: none; */
+    width: 153px;
+    margin: 0 auto;
+    margin-top: 100px;
+    text-align: center;
+}
+.e-img{
+    width: 153px;
+    height: 132px;
+    background: url(../img/nomsg.png);
+    background-size: 100%;
+}
+
+/* 这个是删除的图标 */
+.recycle{
+    font-size: 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+.recycle:hover{
+    color: #845f3f;
+}
+.recycle:hover .delete{
+    transition: 0.5s;
+    background: url(../img/delete2.png);
+
+}
+.recycle .delete{
+    margin-right: 5px;
+    display: flex;
+    width: 15px;
+    height: 16px;
+    background: url(../img/delete1.png);
+}

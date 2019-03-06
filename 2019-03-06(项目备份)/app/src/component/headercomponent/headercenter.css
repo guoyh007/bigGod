@@ -1,0 +1,73 @@
+/* 个人中心 */
+#header .fr #login{
+    margin-right: -6px;
+}
+#header .fr #login:hover #mycenter{
+    display: block;
+}
+
+#login span{
+    display: inline-block;
+    color: #fff;
+}
+#header .fr #login .pic{
+    width: 30px;
+    height: 30px;
+    
+}
+#header .fr #login .center{
+    margin-top: 9px;
+    display: flex;
+    justify-content: center;
+}
+#header .fr #login .center span{
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+}
+#header .fr #login .pic1{
+    margin-right: 10px;
+    background: url(../../img/center/头像.png) no-repeat;
+    background-size: 100%;
+
+}
+#header .fr #login .pic2{
+    /* margin-top: 10px; */
+    background: url(../../img/center/center.png) no-repeat;
+    background-size: 100%;
+
+}
+/* 个人中心 */
+#header .fr #mycenter{
+    display: none;
+    margin-top: 9px;
+    position: absolute;
+    z-index: 200;
+    width: 110px;
+    box-shadow: 0 3px 28px rgba(0,0,0,.1);
+    color: #666;
+}
+#header .fr  #mycenter li{
+    line-height: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#header .fr  #mycenter ul li:hover{
+    background: #845f3f;
+}
+#header .fr  #mycenter ul li:hover span{
+    color: #fff;
+}
+#header .fr  #mycenter ul li span{
+    color: #666;
+}
+#header .fr  #mycenter ul li a{
+    /* height: 16px; */
+    color: #666;
+}
+#header .fr  #mycenter ul li:hover a{
+    color: #fff;
+}
+

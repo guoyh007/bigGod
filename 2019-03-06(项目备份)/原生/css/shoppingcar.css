@@ -1,0 +1,326 @@
+/* 购物车 */
+/*   <!--@@@@@@@@@@@@@@@@ 这里是content --> */
+hr{
+    border: 0.5px solid #e7e7e7;
+}
+#shopping .content{
+    width: 1080px;
+    margin: 0 auto;
+}
+
+.select{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url(../img/unselect.png);
+}
+.active{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url(../img/all.png);
+}
+.nav{
+    display: flex;
+    align-items: center;
+    height: 77px;
+}
+.nav span:last-child a{
+    color: #666;
+}
+.nav span:last-child a:hover{
+    color: #845f3f;
+}
+#shopping .content .title{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    line-height: 40px;
+    background-color: #fafafa;
+    color: #666;
+}
+.big-block .header{
+    margin-top: 45px;
+    margin-bottom: 15px;
+}
+.big-block .header .pic{
+    margin-left: 900px;
+    display: inline-block;
+    margin-top: -1px;
+    width: 17px;
+    height: 17px;
+    background: url(../img/警示.png) no-repeat;
+}
+.big-block .free-shipping{
+    color:  #999;
+}
+
+.select{
+    margin-right: 20px;
+    margin-left: 10px;
+}
+.title span:nth-child(2){
+    width: 130px;
+}
+.title span:nth-child(3){
+    width: 325px;
+}
+.title span:nth-child(4){
+    width: 205px;
+}
+.title span:nth-child(5){
+    width: 208px;
+}
+.title span:nth-child(6){
+    width: 129px;
+}
+/* 表头结束 */
+
+#shopping .content .detail{
+    height: 141px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-top:0.5px solid #e7e7e7;
+    border-bottom:0.5px solid #e7e7e7;
+    /* padding-bottom: 20px; */
+}
+
+/* 图片 */
+.detail img{
+    width: 120px;
+    height: 120px;
+    margin-left: -15px;
+}
+.detail .price{
+    margin-left: 190px;
+}
+
+
+/* -  +  开始 */
+.content .nums{
+    margin-left: 120px;
+    width: 130px;
+    border: 1px solid #D6D6D6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.content .nums div{  
+    width: 34px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+.content .less{
+    width: 30px;
+    height: 30px;
+    background-image: url(../img/减.png);
+}
+.content .add{
+    width: 30px;
+    height: 30px;
+    /* background-image: url(../img/add.png); */
+    background-image: url(../img/加.png);
+    background-size: 100%;
+}
+.content .nums .count-num{
+    width:60px;
+    height: 100%;
+    text-align: center;
+    line-height: 30px;
+    border-left: 1px solid #D6D6D6;
+    border-right: 1px solid #D6D6D6;
+}
+/* + - 结束 */
+/* 有价格 */
+.count-price{
+    margin-left: 115px;
+}
+
+.delete{
+    margin-left: 102px;
+    /* width: 13px;
+    height: 13px; */
+}
+.delete a:hover{
+    background: url(../img/delete02.png);
+}
+.delete a{
+    display: block;
+    width: 13px;
+    height: 13px;
+    background: url(../img/delete01.png);
+    background-size: 100%;
+}
+/* 价格为  红色 */
+.all{
+    color: #c00000;
+}
+
+/* <!-- 这里开始是总计价格 --> */
+#init{
+    font-size: 20px;
+    background: #fafafa;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#init .selected{
+    margin-left: 20px;
+}
+#init div:nth-child(2){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#init .c-price span:nth-child(3){
+    justify-content: space-between;
+    text-align: center;
+    margin-left: 20px;
+    width: 200px;
+    height: 80px;
+    line-height: 80px;
+    background: #c00000;
+    color: #fff;
+    box-shadow: 0 -3px 10px #eee;
+}
+
+
+
+
+
+/* <!-- 确认删除对话框 --> */
+#ensure{
+    display: none;/* 暂定 */
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    background-color: rgba(0,0,0,.5);
+    font-size: 20px; 
+}
+#ensure .ensure-box{
+    position: relative;
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 430px;
+    height: 250px;
+    background: #fff;
+    padding: 15px ;  
+    text-align: center;
+}
+#ensure .ensure-box p{
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 64px;
+}
+.ensure-box .delete{
+    display: flex;
+    justify-content: flex-end;
+}
+.ensure-box .delete a{
+    justify-content: flex-end;
+}
+.button{
+    display: flex;
+    justify-content: space-between;
+    width: 214px;
+    font-size: 18px;
+    margin: 0 auto;
+}
+.button div{
+    width: 95px;
+    height: 41px;
+    border:  1px solid #845f3f;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button .active{
+    background: #845f3f;
+    color: #fff;
+}
+.button div:hover{
+    background: #845f3f;
+    color: #fff;
+}
+
+
+
+/*登录注册页面  显示 和隐藏*/
+.show{
+    position: fixed;
+    top:0px;
+    width: 100%;
+    height: 1000px;
+    display: block;
+    z-index: 999;
+    background: rgba(0,0,0,.7);
+}
+.hidden{
+    display: none;
+}
+#login-business .layout-layout-element{
+    margin: 0 auto;
+    margin-top:150px;
+    width: 450px;
+    height: 293px;
+    display: block;
+    background: #fff;
+    position: relative;
+    /* padding-top: 50px; */
+}
+/* 关闭 图标 */
+#login-business .layout-layout-element  .close .m-icons-close{
+    display: block;
+    position: absolute;
+    top:10px;
+    right: 10px;
+    width: 13px;
+    height: 13px;
+    background: url(../img/closed.png) no-repeat;
+    background-size: 100%;
+}
+#login-business .login-content{
+    position: absolute;;/*  */
+    top: 47px;
+    display: block;
+    margin: 0 40px;
+    width: 370px;
+}
+#login-business .login-content .agreement-container{
+    margin-top: 20px;
+}
+#login-business .title{
+    display: block;
+    text-align: center;
+    font-size: 18px;
+}
+#login-business .content a{
+    color: #845f3f;
+}
+.button-lists{
+    text-align: center;
+    font-size: 18px;
+}
+.button-lists>div{
+    margin-top: 25px;
+    display: inline-block;
+    width: 160px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 20px;
+    border:1px solid #845f3f;
+    border-radius: 3px;
+}
+.button-lists .agr{
+    color: #fff;
+    background-color: #845f3f;
+    border-color: #845f3f;
+}
+
+

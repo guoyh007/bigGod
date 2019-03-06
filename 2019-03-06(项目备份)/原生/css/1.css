@@ -1,0 +1,77 @@
+/* body,div,ol,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,fieldset,legend,input,textarea,p,blockquote,th,td{
+    margin:0;
+    padding:0;
+} */
+/* 
+    下边这个是有品自己的
+*/
+body, dd, div, dl, dt, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+    font-size: 14px;
+    position: relative;
+    color: rgb(51, 51, 51);
+}
+/* 全局下 a标签的属性 */
+body a{
+    text-decoration: none;
+    /* color:#000; */
+    color: #666;
+}
+a:hover{
+    cursor: pointer;
+    color: #845f3f;
+}
+a{
+    list-style: none;
+    
+}
+.long-line{
+    width: 100%;
+    height: 1px;
+    background:#e7e7e7;
+}
+#rooter{
+    width: 100%;
+    position: relative;
+}
+/* 所有图标 */
+.icons{
+    background-image: url(../img/yp-icons.2bf57ccf.png);
+}
+img{
+    vertical-align: middle;
+}
+/* <!-- h-subTit/ 所有的大标题的class名 --> */
+.h-subTit{
+    color: #333;
+    font-size: 28px;
+    font-weight: 400;
+}
+.h-subTit span{
+    margin-left: 12px;
+    font-size: 14px;
+    color: #999;
+}
+/* 只要是图标 hover之后都变为指针变换形式 */
+.m-icons:hover{
+    cursor: pointer;
+}
+/* 所有灰色字体 */
+.fontcolor-fade{
+    color:rgb(153, 153, 153);
+}
+/* 取消所有li标签的默认格式 */
+li{
+    list-style: none;  
+  }
+
+#mid{
+    display: block;
+    width: 1080px;
+    margin: 0 auto;
+}
+

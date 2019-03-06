@@ -1,0 +1,205 @@
+/*轮播图 */
+#mid .banner-nav {
+    display: flex;
+    justify-content: flex-start;
+    position:relative;
+    background-color: #845f3f;
+    height: 358px;
+    z-index: 100;
+    /* padding-top: 5px; */
+}
+#mid .banner-nav .banner-container{
+    justify-content: flex-start;
+    overflow: hidden;
+    width: 221px;
+    height: 100%;
+    /* display: inline-block; */
+    background: #845f3f;
+}
+/*  */
+#mid .banner-nav .banner-container ul{
+    display: block;
+    position: absolute;
+    width: 221px;
+    margin-top: 5px;
+    background: #845f3f;
+}
+#mid .banner-nav .banner-container ul li{
+    position: relative;
+    padding: 0 30px;
+    height: 37px;
+    line-height: 37px;
+    color: #fff;
+}
+/* 这个是hover的效果 */
+#mid .banner-nav .banner-container ul li:hover{
+    /* display: none; *//* 这个有问题暂时不管 */
+    background-color: #684b34;
+    color: #f1ede9;
+}
+#mid .banner-nav .banner-container ul li:hover .show{
+    display: none;
+}
+#mid .banner-nav ul li a:hover{
+    color: #e4af82;
+}
+#mid .banner-nav ul li a{
+    color: #fff;
+}
+
+#mid .banner-nav .nav-detail{
+    padding-top: 20px;
+    padding-left: 30px;
+    position: absolute;
+    top:0px;
+    left: 221px;
+    overflow-y: auto;
+    overflow-x:hidden;
+    display: none;
+    /* 显示或者隐藏************ */
+    width: 829px;
+    height: 337px;
+    background: #fff;
+    z-index: 900;
+    border: 1px solid #eee;
+    transition: 0.2s ease;
+}
+#mid .banner-nav .nav-detail div {
+    width: 829px;
+    /* background: purple; */
+    display: block;
+}
+#mid .banner-nav .nav-detail div ul{
+    /* display: flex; */
+    /* justify-content: flex-start; */
+}
+#mid .banner-nav .nav-detail div ul li{
+    display: inline-block;
+    margin-bottom: 32px;
+    line-height: 40px;
+    width: 195px;
+    height: 40px;
+    /* background: yellowgreen; */
+}
+/* 添加show的时候，块就显示 @@@@@@@@@@@@@@*/
+#mid .banner-nav .show{
+   /*  display: block; */
+}
+
+#mid .banner-nav .banner-container ul:hover .show{
+    display: block;
+}
+#mid .banner-nav .nav-detail img{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+/* 轮播图部分  最外边大盒子*/
+#mid .banner-nav .banner-box{
+    /* display: inline-block; */
+    width: 859px;
+    height: 100%;
+    background: rgb(250, 248, 248);
+    position: relative;
+}
+/* 这个有点不对 div要换成a标签 */
+#mid .banner-nav .banner-box .swiper-wrapper{
+    position: relative;/* 子绝，父相 */
+    width: 859px;
+    height: 100%;
+    background: rgb(207, 76, 76);
+    overflow: hidden;
+    /* z-index: 100; */
+}
+#mid .banner-nav .banner-box .swiper-wrapper .swiper-inner{
+    position: absolute;/* 子绝，父相 */
+    /* z-index: 100; */
+    left: 0px;/* 这个用来轮播的额left:-859px 1718px;2577px */
+    display: flex;
+    justify-content: flex-start;
+    transition: all 0.5s;
+}
+#mid .banner-nav .banner-box .swiper-wrapper .swiper-inner a{
+    /* display: flex; */
+    width: 859px;
+    height: 358px;
+    transition: all 0.5s;
+    /* background: url(../img/img.jpg) no-repeat; */
+}
+#mid .banner-nav .banner-box .swiper-wrapper .swiper-inner a:nth-child(1){
+    /* left: 358px; */
+    background: url(../img/banner-img/img01.jpg) no-repeat;
+    background-size: 100%;
+
+}
+#mid .banner-nav .banner-box .swiper-wrapper .swiper-inner a:nth-child(2){
+    background: url(../img/banner-img/img02.jpg) no-repeat;
+    background-size: 100%;
+}
+#mid .banner-nav .banner-box .swiper-wrapper .swiper-inner a:nth-child(3){
+    background: url(../img/banner-img/img03.jpg) no-repeat;
+    background-size: 100%;
+}
+#mid .banner-nav .banner-box .swiper-wrapper .swiper-inner a:nth-child(4){
+    background: url(../img/banner-img/img04.jpg) no-repeat;
+    background-size: 100%;
+}
+
+/* 轮播的小圆点 */
+#mid .banner-nav .banner-box .swiper-button {
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -48px;
+}
+#mid .banner-nav .banner-box .swiper-button ul li{
+    display: inline-block;
+    padding: 0;
+    /* justify-content: flex-start; */
+    width:8px;
+    height:8px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-left: 10px;
+    border: solid 2px rgb(146, 146, 146);
+}
+#mid .banner-nav .banner-box .swiper-button ul li:hover{
+    background-color: #845f3f;
+    border: solid 2px #fff;
+    transition: all .5s;
+}
+
+/* 下边是轮播左右按钮 */
+#mid .banner-nav .banner-box .swiper-direction{
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    opacity: 0.8;
+    margin-top:-19px;
+} 
+#mid .banner-nav .banner-box .swiper-left{
+    top:50%;
+    left: 10px;
+    background:url(../img/向左.png) no-repeat;
+    background-size: 100%;
+}
+/* hover */
+#mid .banner-nav .banner-box .swiper-left:hover{
+    background:url(../img/向左-c.png) no-repeat;
+    background-size: 100%;
+}
+
+#mid .banner-nav .banner-box .swiper-right{
+    top:50%;
+    right: 10px;
+    background:url(../img/向右.png) no-repeat;
+    background-size: 100%;
+}
+/* hover */
+#mid .banner-nav .banner-box .swiper-right:hover{
+    background:url(../img/向右-c.png) no-repeat;
+    background-size: 100%;
+}

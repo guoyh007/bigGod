@@ -1,0 +1,156 @@
+/* 限时购----------------------- */
+.limit-box{
+    margin-top: 35px;
+}
+.h-subTit img{
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
+    vertical-align: -6%;
+}
+/* .h-subTit span{
+    margin-left: 
+} */
+.h-subTit .time{
+    margin-left: -4px;
+    font-size: 18px;
+    color: #b04337;
+}
+.h-subTit .timer{
+    display: inline-block;
+    margin-left: 8px;
+}
+.h-subTit .timer span{
+    display: inline-block;
+    margin-left: -6px;
+    color: #b04337;
+    text-align: center;
+}
+.h-subTit .timer .time{
+    width: 23px;
+    height: 23px;
+    font-size: 15px;
+    line-height: 23px;
+
+    display: inline-block;
+    color:#fff;
+    background: #b04337;
+}
+.h-subTit .timer .colon{
+    width: 2px;
+    height: 23px;
+}
+/* 图片内容 */
+.time-limit-box{
+    position: relative;
+    width: 100%;
+    height: 354px;
+    /* background: yellowgreen; */
+    overflow: hidden;
+    margin-top: 20px;
+}
+.time-limit-box .time-limit-container{
+    position: absolute;
+    /* background: #b04337; */
+    left: 0px;/* 这个是 轮播 用来滑动的 */
+    height: 354px;
+    width: 2000px;
+    display: block;
+    transition: all 0.4s;
+}
+/* 这个其实可以用ul 和li 来表示 */
+.time-limit-box .time-limit-container>div:hover{
+    box-shadow: 5px 2px 25px rgb(43, 42, 42);
+    transition: 0.5s;
+    top:-1px;
+}
+.time-limit-box .time-limit-container div:nth-child(1){
+    margin-left: 0px;
+}
+.time-limit-box .time-limit-container>div{
+    width: 266px;
+    height: 354px;
+    background: #faf6ef;
+    display: inline-block;
+    position: relative;/* 相对定位 */
+    margin-left: 5px;
+}
+.time-limit-container .img-tag{
+    position: absolute;
+    top: 241px;
+    z-index: 2;
+    width: 58px;
+    height: 25px;
+    background: url(../img/price-background.png) no-repeat;
+    background-size: 100%;
+    text-align: center;
+   
+}
+.time-limit-container .img-tag span{
+    color: #fff;
+    line-height: 25px;
+    font-size: 14px;
+}
+.time-limit-container img{
+    position: absolute;
+    width:266px;
+}
+.time-limit-box .time-limit-container .price{
+    position: absolute;
+    bottom:0;
+    height: 88px;
+    width: 100%;
+    text-align: center;
+
+}
+.time-limit-box .time-limit-container .price p{
+    margin-left: 0px;
+}
+.time-limit-box .time-limit-container .price .pro-info {
+    color: rgb(90, 90, 90);
+    font-size: 19px;
+    line-height: 23px;
+    height: 23px;
+    margin-top: 13px;
+
+}
+.time-limit-box .time-limit-container .price .pro-price{
+    margin-top: 11px;
+    font-size: 22px;
+    line-height: 26px;
+    color: #a92112;
+}
+.time-limit-box .time-limit-container .price .pro-price .pro-unit {
+    font-size: 15px;
+    margin-right:-8px;
+}
+.time-limit-box .time-limit-container .price .pro-price .market-price{
+    font-size: 14px;
+    color: #333;
+    text-decoration: line-through;
+}
+.time-limit-box .m-icons{
+    width: 38px;
+    height: 38px;
+    background: yellow;
+    position: absolute;
+    top:140px;
+    z-index: 2;
+    opacity: 1;
+    /* border-radius: 19px; */
+}
+
+.time-limit-box .swiper-left{
+    left: 10px;
+    background: url(../img/banner_left01.png)
+}
+.time-limit-box .swiper-left:hover{
+    background: url(../img/banner_left02.png)
+}
+.time-limit-box .swiper-right{
+    right: 10px;
+    background: url(../img/banner_right01.png)
+}
+.time-limit-box .swiper-right:hover{
+    background: url(../img/banner_right02.png)
+}

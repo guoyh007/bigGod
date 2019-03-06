@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #m{
+            background: red;
+        } 
+
+        #n{
+            /* display: none; */
+            width: 1000px;
+            height: 100px;
+            background: green;
+        }
+        #m :hover #n{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+     <!--    注意：要确保弹出的div在hover浮层div的内部。 -->
+    <div id="m">萨拉发动机阿瑟lf
+        <div id="n"></div>
+    </div>
+</body>
+</html>

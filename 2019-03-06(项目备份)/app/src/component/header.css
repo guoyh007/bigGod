@@ -1,0 +1,144 @@
+/* 下边这个是  登录行*/
+#header{
+    width: 100%;
+    height: 48px;
+    background: #333;/* #333;  #e7e7e7  #aa986a #845f3f*/
+    display: flex;
+    justify-content: center;
+    /* font-size: 14px; *//* 可删 */
+    /* box-shadow:  0 0 3px 3px #e6e6e6; */
+}
+#header .header-box{
+    position: relative;/* 11:45 */
+    display: block;
+    width: 1080px;
+    height: 48px;
+    /* background-color: rgb(44, 192, 100); *//*结构显示*/
+    display: flex;
+    justify-content: flex-end;
+}
+#header .fr{
+    /* width: 465px;  */
+    height: 48px;
+    display: flex;
+    justify-content: flex-end;
+    /* background: rgb(224, 215, 87); *//* 最后要删的 */
+}
+#header .fr div{
+    justify-content: flex-end;
+    margin-right: 8px;
+    text-align: center;
+    margin-right: 13px;
+    margin-left: 14px;
+}
+#mycenter{
+    background: white;
+    display: none;
+    /* 这个可以控制显示和隐藏 */
+}
+/*这个是 登录注册的 */
+#no-login span{
+    line-height: 48px; 
+    color: #e7e7e7;
+    cursor: pointer;
+}
+/* 这个是 app下载 图标 */
+#header .fr div .icons-app{
+    display: inline-block;
+    margin-bottom:-9px;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    left:-5px;
+    background-position:0 -1016px;
+}
+#header .fr a{
+    text-decoration:none;
+    line-height: 48px; 
+    color: #e7e7e7;
+    /* margin-left: 8px; */
+}
+
+
+
+#header .fr .down-app{
+    margin-left: -10px;
+}
+#header .fr .line{
+    display: inline-block;
+    width: 1px;
+    height: 16px;
+    background: #e7e7e7;
+    margin-top: 16px;
+}
+#header .fr .clauses-box{
+    width: 174px;
+    display: flex;
+    flex-direction: column;
+/*     background-color: rgb(133, 57, 57); */
+    margin-right: 0px;/* 这个可调 右边的宽度 */
+}
+#header .fr .clauses-box:hover .header-item {
+    display: block;
+}
+
+#header .fr .clauses {
+    width: 161px;
+    height: 48px;
+    justify-content: flex-start;
+    margin-left: 0px;
+}
+
+#header .fr .clauses a{
+    display: inline-block;
+    justify-content: flex-start;
+}
+#header .fr .icons-dropdown{
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-bottom: -9px;
+    background-position: 0px -1662px;/* 这个当时没出来，因为多加了 , */
+}
+
+/* 取消所有li标签的默认格式 */
+li{
+  list-style: none;  
+}
+/* 以下设置 弹出来的盒子 */
+/* #header .fr .clauses-box .show{
+    opacity: 1;
+} */
+#header .fr .clauses-box .hidden{
+    opacity: 0;
+}
+#header .fr .header-item {
+    display: none;
+    width: 160px;
+    height: 70px;
+    box-shadow:0 3px 28px rgba(0,0,0,.1);
+    position: absolute;
+    /* left: 0px; */
+    right: 0px;
+    top: 48px;
+    z-index: 100;/* 让他在最前边 */
+}
+#header .fr .header-item ul li{
+    display: block;
+    width: 160px;
+    height:35px;
+    background: white;
+}
+#header .fr .header-item ul li:hover{
+    background: #845f3f;
+}
+#header .fr .header-item ul li:hover a{
+    color: white;
+}
+#header .fr .header-item ul li a{
+    /* text-decoration: none; */
+    color:#666;
+    line-height: 35px;
+    /* box-shadow:0 3px 28px rgba(0,0,0,.1); */
+}
