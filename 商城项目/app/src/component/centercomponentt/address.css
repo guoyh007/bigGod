@@ -1,0 +1,73 @@
+#address{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap:wrap;
+}
+#address .addressBox{
+    display: block;
+    /* flex-direction:column;  */
+    width: 250px;
+    height: 200px;
+    border: 1px solid #e7e7e7;
+    margin-top: 15px;
+    margin-right: 15px;
+    /* background: red; */
+}
+#address .active{
+    border: 1px solid #845f3f;
+}
+
+#address .addressBox .mark{
+    background: #7f6044;
+    margin: 3px;
+    width: 40px;
+    font-size: 9px;
+    color: #fff;
+    text-align: center;
+}
+#address .addressBox .nomark{
+    background: #fff;
+    margin: 3px;
+    width: 40px;
+    height: 16px;
+    font-size: 9px;
+    color: #fff;
+    text-align: center;
+
+}
+#address .addressBox .content2{
+    margin-left:30px;
+}
+#address .addressBox .content2 .username{
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+#address .addressBox .content2 .tel{
+    color: #333;
+}
+#address .addressBox .content2 .add{
+    display: block;
+    margin: 0 auto;
+    /* margin-top: 20px; */
+}
+#address .addressBox .btn{
+    width: 27px;
+    height:27px;
+    background: url(../../img/public-img/pic0.png);
+    margin: 0 auto;
+    margin-top: 65px;
+    /* margin: 0 auto; */
+}
+#address .addressBox .addNew{
+    margin-top: 40px;
+    margin-left: 90px;
+    /* margin: 0 auto; */
+}
+
+#address .addressBox:hover{
+    border: 1px solid #845f3f;
+}
+#address .addressBox:hover .btn{
+    background: url(../../img/public-img/pic1.png);
+}

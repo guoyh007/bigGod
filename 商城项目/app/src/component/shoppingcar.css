@@ -1,0 +1,310 @@
+/* 购物车 */
+/*   <!--@@@@@@@@@@@@@@@@ 这里是content --> */
+hr{
+    border: 0.5px solid #e7e7e7;
+}
+#shopping .content{
+    width: 1080px;
+    margin: 0 auto;
+}
+
+.select{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url(../img/unselect.png);
+}
+#shopping .active{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url(../img/all.png);
+}
+.nav{
+    display: flex;
+    align-items: center;
+    height: 77px;
+}
+.nav span:last-child a{
+    color: #666;
+}
+.nav span:last-child a:hover{
+    color: #845f3f;
+}
+#shopping .content .title{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    line-height: 40px;
+    background-color: #fafafa;
+    color: #666;
+}
+.big-block .header{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 45px;
+    margin-bottom: 15px;
+    transition: all 1s;
+}
+.big-block .header .pic{
+    margin-left: 900px;
+    display: inline-block;
+    margin-top: 2px;
+    width: 17px;
+    height: 17px;
+    background: url(../img/警示.png) no-repeat;
+}
+.big-block .free-shipping{
+    color:  #999;
+}
+
+.select{
+    margin-right: 20px;
+    margin-left: 10px;
+}
+.title span:nth-child(2){
+    width: 130px;
+}
+.title span:nth-child(3){
+    width: 325px;
+}
+.title span:nth-child(4){
+    width: 205px;
+}
+.title span:nth-child(5){
+    width: 208px;
+}
+.title span:nth-child(6){
+    width: 129px;
+}
+/* 表头结束 */
+#shopping .content .detail-box{
+    border-top:0.5px solid #e7e7e7;
+    border-bottom:0.5px solid #e7e7e7; 
+}
+#shopping .content .detail{
+    height: 141px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-top:0.5px dashed #e7e7e7;
+    /* border-bottom:0.5px solid #e7e7e7; */
+    /* padding-bottom: 20px; */
+}
+#shopping .content .detail:nth-child(1){
+    border-top:0px dashed #e7e7e7;
+}
+#shopping .content .detail .name{
+    display: inline-block;
+    width: 100px;
+    margin-left: 10px;
+}
+/* 图片 */
+.detail img{
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    margin-left: -15px;
+}
+.detail .price{
+    margin-left: 200px;
+    /* margin-right: 90px; */
+    /* width: 50px; */
+    width: 100px;
+    text-align: center;
+}
+
+
+/* -  +  开始 */
+.content .nums{
+    margin-left: 97px;
+    width: 130px;
+    border: 1px solid #D6D6D6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.content .nums div{  
+    width: 34px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+.content .less{
+    width: 30px;
+    height: 30px;
+    background-image: url(../img/减.png);
+}
+.content .add{
+    width: 30px;
+    height: 30px;
+    /* background-image: url(../img/add.png); */
+    background-image: url(../img/加.png);
+    background-size: 100%;
+}
+.content .nums .count-num{
+    width:60px;
+    height: 100%;
+    text-align: center;
+    line-height: 30px;
+    border-left: 1px solid #D6D6D6;
+    border-right: 1px solid #D6D6D6;
+}
+/* + - 结束 */
+/* 有价格 */
+.count-price{
+    margin-left: 115px;
+}
+
+.detail-box .delete{
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    margin-left: 45px;
+    /* width: 13px;
+    height: 13px; */
+}
+.delete a:hover{
+    background: url(../img/delete02.png);
+}
+.delete a{
+    display: block;
+    width: 13px;
+    height: 13px;
+    background: url(../img/delete01.png);
+    background-size: 100%;
+}
+/* 价格为  红色 */
+.all{
+    width: 100px;
+    color: #c00000;
+}
+
+/* <!-- 这里开始是总计价格 --> */
+#init{
+    margin-top: 70px;
+    font-size: 20px;
+    background: #fafafa;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#init .selected{
+    margin-left: 20px;
+}
+#init div:nth-child(2){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#init .c-price a:nth-child(3){
+    justify-content: space-between;
+    text-align: center;
+    margin-left: 20px;
+    width: 200px;
+    height: 80px;
+    line-height: 80px;
+    background: #c00000;
+    color: #fff;
+    box-shadow: 0 -3px 10px #eee;
+}
+
+/* <!-- 确认删除对话框 --> */
+#ensure{
+    display: none;/* 暂定 */
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    background-color: rgba(0,0,0,.5);
+    font-size: 20px; 
+}
+#ensure .ensure-box{
+    position: relative;
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 430px;
+    height: 250px;
+    background: #fff;
+    padding: 15px ;  
+    text-align: center;
+}
+#ensure .ensure-box p{
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 64px;
+}
+.ensure-box .delete{
+    display: flex;
+    justify-content: flex-end;
+}
+.ensure-box .delete a{
+    justify-content: flex-end;
+}
+.button{
+    display: flex;
+    justify-content: space-between;
+    width: 214px;
+    font-size: 18px;
+    margin: 0 auto;
+}
+.button div{
+    width: 95px;
+    height: 41px;
+    border:  1px solid #845f3f;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button .active{
+    background: #845f3f;
+    color: #fff;
+}
+.button div:hover{
+    background: #845f3f;
+    color: #fff;
+}
+
+/*  */
+.no-cart{
+    display: block;
+    width: 1080px;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 150px;
+}
+.no-cart .e-img{
+    background: url(../img/no-cart.png) no-repeat;
+    background-size: 100%;
+    width: 153px;
+    height: 132px;
+    margin: 0 auto;
+}
+.no-cart .e-info{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.no-cart .btn{
+    color: #666;
+    border: 1px solid #666;
+    border-radius: 2px;
+    width: 97px;
+    height: 43px;
+    line-height: 41px;
+    font-size: 18px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.no-cart .btn:hover{
+    background-color: #845f3f;
+    border-color: #845f3f;
+    color: #fff;
+}

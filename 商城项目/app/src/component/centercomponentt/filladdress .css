@@ -1,0 +1,90 @@
+#filladdress{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    /* display: none; */
+    position: fixed;
+    top: 0;
+    left: 0px;
+    width: 100%;
+    height:100%;
+    background:rgba(0,0,0,.5);
+    z-index: 1000;
+}
+
+#filladdress .fillbox{
+    /* display: fixed; */
+    /* margin-top: 100px; */
+    width: 600px;
+    height: 500px;
+    margin: 0 auto;
+    background: #fff;
+    opacity: 1; 
+    padding: 25px;
+    position: relative;
+}
+#filladdress .fillbox .fill{
+    display: flex;
+    flex-direction: column;
+
+}
+#filladdress .fillbox p{
+    font-size: 19px;
+    margin-top: 30px;
+    color: rgb(39, 39, 39);
+}
+#filladdress .fillbox hr{
+    width: 100%;
+    height: 0.5px;
+
+}
+#filladdress .fillbox input{
+    width: 297px;
+    height: 38px;
+    margin-top: 30px;
+    padding-left: 10px;
+    font-size: 14px;
+    outline: none;
+    /* color: red; */
+}
+#filladdress .fillbox input::-webkit-input-placeholder {
+    color: rgb(90, 90, 90);
+    font-size: 14px;
+}
+#filladdress .fillbox textarea {
+    margin-top: 30px;
+    outline: none;
+    padding: 10px;
+    font-size: 14px;
+    height: 120px;
+    width:289px;
+}
+
+/* 最底层按钮 */    
+#filladdress .submit-box{
+    width: 100%;
+    height: 90px;
+    background: #f2f2f2;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#filladdress .submit-box .button-box{
+    margin-top: -18px;
+}
+#filladdress .submit-box .button{
+    width: 184px;
+    height: 40px;
+    background-color: #845f3f;
+    border-color: #845f3f;
+    border-radius: 2px;
+    /* font-size: #fff; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}

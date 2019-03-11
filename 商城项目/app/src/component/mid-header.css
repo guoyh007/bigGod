@@ -1,0 +1,134 @@
+/* 以下是中间(mid)部分 */
+.header-nav{
+    width: 1349px;
+    background:  #fff;
+}
+.header-nav2{
+    width: 1349px;
+    background:  #fff;
+    position: fixed;
+    z-index: 199;
+    transition: all 0.5;
+}
+
+#mid-header{
+    width: 1080px;
+    height: 71px;
+    background:  #fff;
+    margin: 0 auto;
+    position: relative;
+}
+
+#mid-header .m-logo{
+    position: absolute;
+    bottom: 0;
+    height: 51px;
+    width: 123px;
+    background: url(../img/m-logo.png) no-repeat;
+    background-size: 100%;
+     /* background: #dfdfdf;  */
+}
+#mid-header .mid-header-top ul{
+    /* height: 60px; */
+  /*   background: rgb(196, 149, 19); *//* 这个是li类的背景色，用来区分结构 */
+    /* margin-top: 10px; */
+    position: absolute;
+    bottom: 0px;
+    left: 300px;
+}
+#mid-header .mid-header-top .carnum{
+    position: absolute;
+    right: -2px;
+    top: 31px;
+    width: 21px;
+    border-radius: 8px;
+    line-height: 17px;
+    display: block;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    background: #c00000;
+}
+#mid-header ul li:hover{
+    cursor: pointer;
+}
+#mid-header ul li:hover span{
+    color: #845f3f;
+}
+#mid-header ul li{
+    display: inline-block;
+    margin-right: 20px;
+}
+#mid-header ul li span{
+    text-decoration: none;
+    font-size: 18px;
+    line-height:51px;     
+    color: #666;
+}
+#mid-header .mid-header-top .m-search{
+    width: 296px;
+    height: 42px;
+   /*  background: rgb(171, 236, 19); *//* 这个是搜索框 */
+    float: right;
+    position: relative;
+    left: -12px;
+    top: 20px;
+}
+
+
+/* 这个是购物车图标 */
+#mid-header .buy{
+    float: right;
+    position: relative;
+    top: 38px;
+    right: 10px;
+    display: block;
+    width: 25px;
+    height: 25px;
+    background: url(../img/购物车.png) no-repeat;
+    background-size: 100%;
+}
+#mid-header .buy:hover{
+    background: url(../img/购物车2.png) no-repeat;
+    background-size: 100%;
+}
+/* 搜索div */
+#mid-header .m-search{
+    position: relative;
+    border-bottom: solid 1px  #e7e7e7;
+}
+/* 搜索行的图片 */
+#mid-header .mid-header-top .search-picture{
+    position: absolute;
+    bottom: 4px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(../img/搜索.png) no-repeat;
+    background-size: 100%;
+}
+#mid-header .mid-header-top .search-picture:hover{
+    background: url(../img/搜索2.png) no-repeat;
+    background-size: 100%;
+    transition: all .3s;
+}
+/* 搜索的input框 */
+#mid-header .mid-header-top input{
+    display: inline-block;
+    position: absolute;
+    bottom: 4px;
+    right: 20px;
+    width: 245px;
+    height: 20px;
+    border: none;
+    margin-top: 10px;
+    color:#333;
+    outline: 0;
+}
+#mid-header .mid-header-top input[name="color"]{
+    color: red;
+}
+/* input框中显示的字体颜色 */
+input::-webkit-input-placeholder{
+    color:rgb(200, 201, 200);
+}

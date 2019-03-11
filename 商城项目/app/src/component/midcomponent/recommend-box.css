@@ -1,0 +1,43 @@
+/* 有品推荐 */
+#mid .recommend-box{
+    margin-top: 35px;
+    height: 287px;
+   /*  background: purple; *//* 最后要删除 */
+    position: relative;
+}
+#mid .recommend-box .recommend-content{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+#mid .recommend-box .recommend-content>div{
+    position: relative;
+    width: 265px;
+    height: 230px;
+    background:rgb(242, 238, 228);
+}
+#mid .recommend-box .recommend-content>div .recommend-container{
+    padding-top: 23px;
+    padding-left: 15px;
+}
+/* 推荐物品的 文字 */
+#mid .recommend-box .recommend-content>div div .pro-info{
+    font-size: 20px;
+    line-height: 24px;
+    height: 24px;
+}
+#mid .recommend-box .recommend-content>div div .pro-desc{
+    font-size: 16px;
+    line-height: 20px;
+    height: 20px;
+    margin-top: 8px;
+}
+#mid .recommend-box .recommend-content div img{
+    position: absolute;
+    right: 45px;
+    bottom: 10px;
+    width: 175px;
+    height: 117px;
+}

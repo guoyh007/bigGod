@@ -1,0 +1,130 @@
+/* 普通box */
+.m-box{
+    display: block;
+    margin-top: 35px;
+    width: 100%;
+    /* background: #b04337; *//* @@@@@@ 最后删 */
+}
+.h-container{
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* 所有的h2标签都一个格式 */
+.h-container h2{
+    color: #333;
+    font-size: 28px;
+    font-weight: 400;
+    display: flex;
+}
+.h-container a{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.h-container a span{
+    color: #333;
+}
+.h-container a div{
+    display: flex;
+    width: 16px;
+    height: 16px;
+    background: url(../../img/向右链接.png) no-repeat;
+    background-size: 100%;
+    
+}
+.h-box .h-container a:hover .img{
+    background: url(../../img/向右连接2.png) no-repeat;
+    background-size: 100%;
+}
+.h-box .h-cotent{
+    /* margin-top: 10px; */
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+    /* width: 100%;
+    height: 400px;
+    background: #666; */
+}
+.h-box .h-cotent li{
+    display: block;
+    margin-top: 5px;
+    width: 264px;
+    height: 348px;
+    border: 1px solid #e7e7e7;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.h-box .h-cotent li:hover{
+    margin-top: 4px;
+    box-shadow: 5px 5px 15px  rgb(237, 236, 234);
+}
+.h-box .h-cotent .box1 .img-box{
+    width: 100%;
+    /* height: 236px; */
+    padding-top: 45px;
+    padding-bottom: 25px;
+    display: block;
+    text-align: center;
+}
+.h-box .h-cotent .box1 .img-box img{
+    display: block;
+    height: 125px;
+    width: 125px;
+    margin: 0 auto;
+    /* margin-top: 10px; */
+    margin-bottom: 20px;
+}
+.h-box .h-cotent .box1 .img-box p{
+    color: #845f3f;
+    font-size: 16px;
+    line-height: 20px;
+    height: 20px;
+    margin-top: 0;
+    
+}
+
+
+.h-box .h-cotent .box1 .name-box{
+    text-align: center;
+    padding: 13px 0 10px;
+    
+}
+/* 电脑名字 详情类 */
+.h-box .h-cotent .box1 .name-box{
+    background: #f8f8f8;
+    height: 112px;
+}
+/* 这个是修改之后的  加上div*/
+.h-box .h-cotent .box1 .name-box>div{
+    height: 16px;
+}
+.h-box .h-cotent .box1 .name-box>div span{
+    background:rgb(217, 112, 112);
+    border-radius: 2px;
+    margin-top: 2px;
+    color: #fff;
+    padding: 2px 6px;
+}
+.h-box .h-cotent .box1 .name-box p{
+    display: block;
+    margin: 0 auto;
+}
+.h-box .h-cotent .box1 .name-box .title{
+    color: #333;
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 22px;
+    height: 22px;
+}
+.h-box .h-cotent .box1 .name-box .price{
+    font-size: 12px;
+    margin-top: 11px;
+    color: #a92112;
+}
+.h-box .h-cotent .box1 .name-box .price .price-num {
+    font-size: 20px;
+
+}

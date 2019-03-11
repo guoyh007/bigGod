@@ -1,0 +1,325 @@
+#clearpage {
+    display: block;
+    width: 1033px;
+    margin: 0 auto;
+}
+
+#clearpage .quick-payment .form-item {
+    border-bottom: 1px solid #e7e7e7;
+    margin-top: 30px;
+}
+
+#clearpage .form-item .left-label {
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    font-size: 19px;
+    color: #333;
+
+}
+.moreAddress {
+    margin-top: 15px;
+    margin-bottom: 8px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 42px;
+    line-height: 42px;
+    background-color: #fafafa;
+    width: 100%;
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+    -webkit-transition: all .5s cubic-bezier(0,1,.5,1);
+    -o-transition: all .5s cubic-bezier(0,1,.5,1);
+    transition: all .5s cubic-bezier(0,1,.5,1);
+    cursor: pointer;
+}
+
+#clearpage .form-item .desc {
+    margin-left: 50px;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    color: #845f3f;
+}
+
+#clearpage .form-item {
+    margin-left: 0;
+    margin-right: 0;
+    border-bottom: none;
+}
+
+#clearpage .form-item {
+    /* border-bottom: 1px solid #e7e7e7; */
+    overflow: hidden;
+    margin: 36px 0px 0;
+}
+
+#clearpage .form-item .left-label {
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    font-size: 19px;
+    color: #333;
+}
+
+#clearpage .form-item .select1 {
+    margin-left: 51px;
+    float: left;
+}
+
+#clearpage .form-item .select1 .option-list {
+    height: 50px;
+    line-height: 50px;
+}
+
+#clearpage .form-item .select1 .option-list .option+.option {
+    margin-left: 10px;
+}
+
+#clearpage .form-item .select1 .option-list .option {
+    width: 247.5px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    height: 44px;
+    line-height: 42px;
+    background-color: #fff;
+    text-align: center;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    border: 1px solid #e7e7e7;
+    -webkit-transition: all .5s cubic-bezier(0, 1, .5, 1);
+    -o-transition: all .5s cubic-bezier(0, 1, .5, 1);
+    transition: all .5s cubic-bezier(0, 1, .5, 1);
+}
+
+#clearpage .form-item .select1 .option-list .active {
+    color: #845f3f;
+    border: 1px solid #845f3f;
+}
+
+#clearpage .form-item.no-border {
+    border-bottom: none;
+}
+#clearpage .form-item .select1 .option-list {
+    height: 50px;
+    line-height: 50px;
+}
+#clearpage .form-paper-tips {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #333;
+}
+#clearpage .form-paper-tips .m-red {
+    color: #c00000;
+}
+#clearpage .use-paper {
+    margin-top: 8px;
+}
+#clearpage .form-paper-tips .use-paper a {
+    color: #999;
+}
+#clearpage .form-invoice-pro {
+    margin: 10px 0 0 126px;
+}
+#clearpage .form-invoice-pro a {
+    font-size: 14px;
+    color: #67a3d9;
+    text-decoration: underline;
+}
+#clearpage .form-invioce-item{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+
+
+
+
+#clearpage .good-list-title {
+    padding-top: 40px;
+    padding-bottom: 17px;
+    /* border-top: 1px solid #e7e7e7; */
+    border-bottom: 1px solid #e7e7e7;
+    font-size: 19px;
+    color: #333;
+}
+
+#clearpage .good-container {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    /* height: 90px; */
+    line-height: 90px;
+    /* -webkit-box-sizing: border-box; */
+    box-sizing: border-box;
+    overflow: hidden;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.good-container {
+    color: black;
+}
+
+.pro-support {
+    color: #999;
+    line-height: 17px;
+    font-size: 12px;
+    position: absolute;
+    top: 60px;
+    left: 70px;
+    /* width: 100px; */
+    height: 100px;
+    display: flex;
+}
+
+#clearpage .good-container .pro-support .service {
+    /* background: red; */
+    background: url("../img/对号.png");
+    background-size: 100%;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    /* margin-top: 5px; */
+    /* background-position: 0 -215px; */
+}
+#clearpage .good-container .pro-support .serve{
+    margin-left: 5px;
+}
+
+#clearpage .good-container .img {
+    display: block;
+    width: 50px;
+    height: 50px;/* 这个暂时加上*/
+}
+
+#clearpage .good-container .img,
+.wrapper .merchant .good-container .name {
+    float: left;
+    height: 90px;
+    line-height: 90px;
+}
+
+#clearpage img {
+    vertical-align: middle;
+    border: none;
+    width: 50px;
+    height: 50px;/* 这个暂时加上*/
+}
+
+#clearpage .good-container .name {
+    margin-left: 20px;
+    width: 350px;
+    color: #333;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: relative;
+}
+
+#clearpage .good-container .name .product-name {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#clearpage .good-container .total {
+    text-align: right;
+    width: 180px;
+    color: #c00000;
+}
+
+#clearpage .good-container .price {
+    display: block;
+    height: 90px;
+    line-height: 90px;
+    margin-left: 360px;
+}
+
+#clearpage .moneyCard {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #c00000;
+}
+
+#clearpage .summery {
+    /* display: flex; */
+    width: 1033px;
+    margin-top: 100px;
+    float: right;
+    justify-content: flex-end;
+    flex-direction: column;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+#clearpage .summery div {
+    text-align: right;
+    height: 25px;
+    font-size: 14px;
+}
+
+#clearpage .summery .freeInfo-item .freeInfo-value {
+    margin-left: 25px;
+    margin-right: 10px;
+    display: inline-block;
+    width: 80px;
+    color: #c00000;
+}
+
+#clearpage .summery .total {
+    font-size: 18px;
+    margin-top: 37px;
+    margin-bottom: 20px;
+}
+
+#clearpage .summery .total .freeInfo-value {
+    margin-right: 10px;
+    color: #c00000;
+}
+
+#clearpage .bottom-pay {
+    /* margin-top: 45px; */
+    padding-top: 45px;
+    padding-bottom: 90px;
+    text-align: right;
+    width: 1033px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#clearpage .m-btn-brown {
+    color: #fff;
+    background-color: #845f3f;
+    border-color: #845f3f;
+}
+
+#clearpage .m-btn-middle {
+    min-width: 167px;
+    height: 52px;
+    line-height: 50px;
+    font-size: 20px;
+}
+
+#clearpage .m-btns {
+    display: inline-block;
+    border-radius: 2px;
+    text-align: center;
+
+    border: 1px solid #666;
+    box-sizing: border-box;
+    padding: 0 6px;
+}
+
+#clearpage .m-btns:hover {
+    /* color: #666; */
+    color: #fff;
+    background-color: #d1bfa6;
+    border-color: #d1bfa6;
+}
+
+a {
+    cursor: pointer;
+}

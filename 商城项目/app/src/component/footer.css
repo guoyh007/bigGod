@@ -1,0 +1,52 @@
+ /* 这个是公司详情，工商信息 */
+#m-footer{
+    display: block;
+    /* background:red; */
+    /* position: absolute; */
+    /* bottom: 0; */
+    margin-top: 70px;
+    width: 100%;
+    z-index: 1;
+    color: #666;
+}
+#m-footer hr{
+    border: 0.5px solid rgba(87, 87, 86, 0.2)
+}
+#m-footer .m-footer-container{
+    /* background: #b04337; */
+    width: 1080px;
+    height: 45px;
+    display: flex;
+    justify-content:space-between;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    /* position: absolute;
+    bottom: 0; */
+}
+
+#m-footer .m-f-logo{
+    line-height: 45px;
+    /* justify-content: flex-start; */
+}
+#m-footer .m-f-logo img{
+    width: 123px;
+    height: 45px;
+    margin-right: 25px;
+    /* display: inline-flex; */
+}
+#m-footer .f-info{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 12px;
+}
+/* #m-footer .f-info */
+#m-footer .f-logo img{
+    width: 100px;
+    height: 36px;
+    margin-left: 40px;
+}
+#m-footer .f-info-fr p span{
+    margin-right: 5px;
+}
