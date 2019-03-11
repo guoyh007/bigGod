@@ -2,7 +2,7 @@ var data = {
     "0": {
         "id": 0,
         "pid": -1,
-        "title": "博观文件",
+        "title": "公司文件",
         "type": "file",
         "checked":false
     },
@@ -40,7 +40,7 @@ var data = {
     "2999": {
         "id": 2999,
         "pid": 1,
-        "title": "js程序设计",
+        "title": "模块代码",
         "checked":false
     },
     "4000": {
@@ -52,13 +52,13 @@ var data = {
     "23333": {
         "id": 23333,
         "pid": 2,
-        "title": "踩坑之路",
+        "title": "人员分配",
         "checked":false
     },
     "29000": {
         "id": 29000,
         "pid": 1,
-        "title": "js权威指南",
+        "title": "工作总结",
         "checked":false
     },
     "244444": {
