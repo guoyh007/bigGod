@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+   
+</head>
+
+<body>
+   
+    <script>
+      
+        //关闭定时器,鼠标滚动到一定的时候，关闭
+        window.onscroll = function () {
+            console.log(box.getBoundingClientRect().bottom);
+        };
+        //防抖
+        function dou(fn) {
+            let timer = null;
+
+            return function(){
+                if(timer){
+                    clearTimeout(timer);
+                    timer=null;//这个是当时少加的；
+                }else{
+                    timer = setTimeout(fn,1000)
+                }
+            }
+        };
+        var fn=function(){
+            console.log("防抖");
+        };
+        window.onresize= dou(fn);
+    </script>   
+</body>
+
+</html>
